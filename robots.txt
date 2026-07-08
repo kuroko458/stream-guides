@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://streamguides.com/sitemap.xml
+Sitemap: https://kuroko458.github.io/stream-guides/sitemap.xml
