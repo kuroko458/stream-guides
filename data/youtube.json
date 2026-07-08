@@ -1,0 +1,16 @@
+{
+  "platform": "YouTube",
+  "supportsAV1": true,
+  "supportsHEVC": true,
+  "supportsH264": true,
+  "maxResolution": "4K",
+  "recommendedEncoder": "AV1",
+  "recommendedBitrates": {
+    "720p60": 5000,
+    "1080p60": 9000,
+    "1440p60": 18000,
+    "4K60": 35000
+  },
+  "recommendedKeyframeInterval": 2,
+  "audioBitrate": 160
+}

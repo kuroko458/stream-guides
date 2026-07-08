@@ -1,0 +1,16 @@
+{
+  "platform": "Kick",
+  "supportsAV1": true,
+  "supportsHEVC": true,
+  "supportsH264": true,
+  "maxResolution": "1440p60",
+  "recommendedEncoder": "AV1",
+  "recommendedBitrates": {
+    "720p60": 6000,
+    "1080p60": 9000,
+    "1440p60": 16000
+  },
+  "recommendedKeyframeInterval": 2,
+  "audioBitrate": 160,
+  "subscriptionSplit": "95/5"
+}

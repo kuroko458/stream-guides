@@ -1,0 +1,24 @@
+{
+  "faq": [
+    {
+      "question": "What bitrate should I use for 1080p60?",
+      "answer": "6000-9000 Kbps depending on platform and upload speed."
+    },
+    {
+      "question": "Is NVENC better than x264?",
+      "answer": "Modern NVIDIA NVENC provides excellent quality while using far less CPU."
+    },
+    {
+      "question": "Can I stream with 10 Mbps upload?",
+      "answer": "Yes. 1080p60 streaming is possible while leaving some upload speed unused."
+    },
+    {
+      "question": "Does AV1 look better?",
+      "answer": "Yes. AV1 provides the best compression efficiency among current streaming codecs."
+    },
+    {
+      "question": "How much upload speed should I reserve?",
+      "answer": "Keep at least 20-30% of your upload bandwidth free."
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Streaming Earnings Calculator | Stream Guides</title>
+
+<meta name="description" content="Estimate streaming earnings for YouTube, Twitch, Kick and Loco in multiple currencies.">
+
+<link rel="icon" href="../favicon.ico">
+
+<link rel="manifest" href="../manifest.json">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/dark.css">
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script defer src="../js/main.js"></script>
+<script defer src="../js/earnings.js"></script>
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<div class="logo">
+🎮 <span>Stream</span> Guides
+</div>
+
+<nav>
+<a href="../index.html">Home</a>
+<a href="../platforms/obs.html">OBS</a>
+<a href="../platforms/youtube.html">YouTube</a>
+<a href="../platforms/twitch.html">Twitch</a>
+<a href="../platforms/kick.html">Kick</a>
+<a href="../platforms/loco.html">Loco</a>
+<a href="../tools/bitrate-calculator.html">Calculator</a>
+<a href="index.html" class="active">Earnings</a>
+<a href="../faq.html">FAQ</a>
+<a href="../admin/admin.html">Admin</a>
+
+</nav>
+
+<div class="actions">
+<button id="themeBtn">🌙</button>
+<button id="menuBtn">☰</button>
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<h1>Earnings Calculator</h1>
+
+<p>Estimate your streaming income across all platforms and currencies.</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>Input</h2>
+
+<div class="card">
+
+<label>Platform</label>
+<select id="platform">
+<option value="youtube">YouTube</option>
+<option value="twitch">Twitch</option>
+<option value="kick">Kick</option>
+<option value="loco">Loco</option>
+</select>
+
+<label>Monthly Views</label>
+<input type="number" id="views" placeholder="e.g. 100000">
+
+<label>Subscribers / Followers</label>
+<input type="number" id="subs" placeholder="e.g. 5000">
+
+<button onclick="calculateEarnings()" class="btn">Calculate</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>Result</h2>
+
+<div class="card" id="earningsResult">
+
+Enter details and click calculate
+
+</div>
+
+</div>
+
+<canvas id="earnChart"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>🎮 Stream Guides</h3>
+
+<p>
+Streaming, gaming settings and creator tools.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Platforms</h3>
+
+<a href="../platforms/obs.html">OBS</a>
+
+<a href="../platforms/youtube.html">YouTube</a>
+
+<a href="../platforms/twitch.html">Twitch</a>
+
+<a href="../platforms/kick.html">Kick</a>
+
+<a href="../platforms/loco.html">Loco</a>
+
+</div>
+
+
+<div>
+
+<h3>Earning</h3>
+
+<a href="../earnings/index.html">
+Earnings Calculator
+</a>
+
+<a href="../earnings/youtube.html">
+YouTube Earning
+</a>
+
+<a href="../earnings/twitch.html">
+Twitch Earning
+</a>
+
+<a href="../earnings/kick.html">
+Kick Earning
+</a>
+
+<a href="../earnings/loco.html">
+Loco Earning
+</a>
+
+</div>
+
+
+<div>
+
+<h3>Tools</h3>
+
+<a href="../tools/bitrate-calculator.html">
+Bitrate Calculator
+</a>
+
+<a href="../tools/internet-speed.html">
+Internet Speed
+</a>
+
+<a href="../tools/currency-converter.html">
+Currency Converter
+</a>
+
+</div>
+
+
+<div>
+
+<h3>Games</h3>
+
+<a href="../games/valorant.html">
+Valorant
+</a>
+
+</div>
+
+
+<div>
+
+<h3>Support</h3>
+
+<a href="../about.html">About</a>
+
+<a href="../contact.html">Contact</a>
+
+<a href="../faq.html">FAQ</a>
+
+<a href="../downloads.html">Downloads</a>
+
+</div>
+
+
+<div>
+
+<h3>Legal</h3>
+
+<a href="../legal/privacy-policy.html">
+Privacy Policy
+</a>
+
+<a href="../legal/terms.html">
+Terms of Service
+</a>
+
+<a href="../legal/cookie-policy.html">
+Cookie Policy
+</a>
+
+<a href="../legal/disclaimer.html">
+Disclaimer
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<p>
+© 2026 Stream Guides. All Rights Reserved.
+</p>
+
+<p>
+Built for Streamers 🎮
+</p>
+
+</div>
+
+</footer>
+
+<script src="../js/theme.js"></script>
+<script src="../js/navigation.js"></script>
+
+</body>
+
+</html>

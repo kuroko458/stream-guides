@@ -1,0 +1,216 @@
+/* ==========================================
+   Stream Guides Responsive CSS
+   Mobile • Tablet • Desktop
+========================================== */
+
+/* Large Desktop */
+@media (max-width:1400px){
+
+.container{
+    width:92%;
+}
+
+.hero h1{
+    font-size:56px;
+}
+
+}
+
+/* Laptop */
+@media (max-width:1200px){
+
+.grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.hero h1{
+    font-size:48px;
+}
+
+.footer-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+}
+
+/* Tablet */
+@media (max-width:992px){
+
+header .container{
+    flex-wrap:wrap;
+}
+
+#nav{
+    width:100%;
+    display:none;
+    flex-direction:column;
+    margin-top:20px;
+    gap:15px;
+    padding:20px;
+    border-radius:16px;
+    background:rgba(255,255,255,.05);
+}
+
+#nav.active{
+    display:flex;
+}
+
+.hero{
+    text-align:center;
+    padding:90px 0;
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero p{
+    margin:auto;
+}
+
+.hero-buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+.stats{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.footer-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+body{
+    font-size:15px;
+}
+
+.container{
+    width:94%;
+}
+
+header{
+    padding:15px 0;
+}
+
+.logo{
+    font-size:24px;
+}
+
+.hero{
+    padding:70px 0;
+}
+
+.hero h1{
+    font-size:34px;
+    line-height:1.2;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.btn{
+    width:100%;
+    text-align:center;
+}
+
+.hero-buttons{
+    flex-direction:column;
+    width:100%;
+}
+
+.card{
+    padding:22px;
+}
+
+.platform-card img{
+    width:55px;
+}
+
+.stats{
+    grid-template-columns:1fr;
+}
+
+.stat-box{
+    padding:25px;
+}
+
+.feature-card h3{
+    font-size:20px;
+}
+
+footer{
+    text-align:center;
+}
+
+.footer-grid{
+    gap:25px;
+}
+
+}
+
+/* Small Mobile */
+@media (max-width:480px){
+
+.hero h1{
+    font-size:28px;
+}
+
+.hero p{
+    font-size:15px;
+}
+
+.logo{
+    font-size:21px;
+}
+
+h2{
+    font-size:28px;
+}
+
+.card{
+    padding:18px;
+}
+
+.platform-card img{
+    width:50px;
+}
+
+.btn{
+    padding:14px;
+    font-size:15px;
+}
+
+}
+
+/* Extra Small */
+@media (max-width:360px){
+
+.hero h1{
+    font-size:24px;
+}
+
+.hero p{
+    font-size:14px;
+}
+
+.logo{
+    font-size:18px;
+}
+
+.btn{
+    font-size:14px;
+}
+
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "player": "TenZ",
+    "mouse": "Finalmouse ULX Competition",
+    "dpi": 1600,
+    "polling": "1000 Hz",
+    "mousepad": "Artisan Zero Soft XL",
+    "keyboard": "Wooting 60HE",
+    "switches": "Lekker",
+    "monitor": "ZOWIE XL2566K",
+    "refreshRate": "360 Hz",
+    "headset": "HyperX Cloud II",
+    "microphone": "Shure SM7B"
+  },
+  {
+    "player": "Zekken",
+    "mouse": "Razer Viper V3 Pro",
+    "dpi": 1600,
+    "polling": "1000 Hz",
+    "mousepad": "Artisan Zero Soft XL",
+    "keyboard": "Wooting 60HE",
+    "switches": "Lekker",
+    "monitor": "ZOWIE XL2566K",
+    "refreshRate": "360 Hz",
+    "headset": "HyperX Cloud III",
+    "microphone": "Shure SM7B"
+  },
+  {
+    "player": "aspas",
+    "mouse": "Logitech G Pro X Superlight 2",
+    "dpi": 800,
+    "polling": "1000 Hz",
+    "mousepad": "Artisan Zero",
+    "keyboard": "Wooting 60HE",
+    "switches": "Lekker",
+    "monitor": "ZOWIE XL2566K",
+    "refreshRate": "360 Hz",
+    "headset": "HyperX Cloud III",
+    "microphone": "Shure SM7B"
+  },
+  {
+    "player": "Demon1",
+    "mouse": "Logitech G Pro X Superlight 2",
+    "dpi": 800,
+    "polling": "1000 Hz",
+    "mousepad": "Artisan Zero",
+    "keyboard": "Wooting 60HE",
+    "switches": "Lekker",
+    "monitor": "ZOWIE XL2566K",
+    "refreshRate": "360 Hz",
+    "headset": "HyperX Cloud III",
+    "microphone": "Shure SM7B"
+  },
+  {
+    "player": "yay",
+    "mouse": "Logitech G Pro X Superlight 2",
+    "dpi": 800,
+    "polling": "1000 Hz",
+    "mousepad": "Artisan Zero",
+    "keyboard": "Wooting 60HE",
+    "switches": "Lekker",
+    "monitor": "ZOWIE XL2566K",
+    "refreshRate": "360 Hz",
+    "headset": "HyperX Cloud II",
+    "microphone": "Shure SM7B"
+  }
+]

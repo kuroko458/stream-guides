@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Valorant Settings, Sensitivity, eDPI, Crosshairs & Gear | Stream Guides</title>
+
+<meta
+name="description"
+content="Find Valorant sensitivity, DPI, eDPI, crosshairs, player settings, gaming gear, graphics settings and competitive audio settings."
+>
+
+<meta
+name="keywords"
+content="Valorant sensitivity, Valorant eDPI, Valorant settings, Valorant crosshair, Valorant graphics settings, Valorant audio settings, Valorant gear"
+>
+
+<meta name="author" content="Stream Guides">
+
+<link rel="icon" href="../favicon.ico" sizes="any">
+
+<link
+rel="icon"
+type="image/png"
+href="../icons/favicon.png"
+>
+
+<link
+rel="manifest"
+href="../manifest.json"
+>
+
+<link
+rel="stylesheet"
+href="../css/style.css"
+>
+
+<link
+rel="stylesheet"
+href="../css/responsive.css"
+>
+
+<link
+rel="stylesheet"
+href="../css/animations.css"
+>
+
+<link
+rel="stylesheet"
+href="../css/dark.css"
+>
+
+<script defer src="../js/main.js"></script>
+
+<script defer src="../js/valorant.js"></script>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+HEADER
+===================================================== -->
+
+<header>
+
+<div class="container">
+
+<div class="logo">
+
+🎮 <span>Stream</span> Guides
+
+</div>
+
+
+<nav id="nav">
+
+<a href="../index.html">
+Home
+</a>
+
+<a href="../platforms/obs.html">
+OBS
+</a>
+
+<a href="../platforms/youtube.html">
+YouTube
+</a>
+
+<a href="../platforms/twitch.html">
+Twitch
+</a>
+
+<a href="../platforms/kick.html">
+Kick
+</a>
+
+<a href="../platforms/loco.html">
+Loco
+</a>
+
+<a href="../tools/bitrate-calculator.html">
+Calculator
+</a>
+
+<a href="../earnings/index.html">
+Earnings
+</a>
+
+<a href="../faq.html">
+FAQ
+</a>
+
+<a href="../admin/admin.html">
+Admin
+</a>
+
+</nav>
+
+
+<div class="actions">
+
+<button
+id="themeBtn"
+type="button"
+aria-label="Toggle theme">
+🌙
+</button>
+
+<button
+id="menuBtn"
+type="button"
+aria-label="Open navigation">
+☰
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="container">
+
+<h1>
+
+Valorant Settings Database
+
+</h1>
+
+<p>
+
+Find Valorant sensitivity, DPI, eDPI, scoped sensitivity,
+polling rate, crosshairs, gear, graphics and audio settings.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a href="#players" class="btn">
+
+Find Player Settings
+
+</a>
+
+<a href="#edpi-calculator" class="btn btn-outline">
+
+Calculate eDPI
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+FEATURES
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Valorant Settings & Tools
+
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+
+🎯 Sensitivity
+
+</h3>
+
+<p>
+
+Compare DPI, sensitivity and eDPI.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+
+➕ Crosshairs
+
+</h3>
+
+<p>
+
+Browse and copy Valorant crosshair codes.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+
+🖱 Gear
+
+</h3>
+
+<p>
+
+View mouse, keyboard, monitor, headset and mousepad setups.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+
+🖥 Graphics
+
+</h3>
+
+<p>
+
+Graphics settings for low-end, mid-range and high-end systems.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+
+🎧 Audio
+
+</h3>
+
+<p>
+
+Competitive audio and voice settings.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+
+🧮 eDPI Calculator
+
+</h3>
+
+<p>
+
+Calculate effective Valorant sensitivity.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+PLAYER SEARCH
+===================================================== -->
+
+<section id="players">
+
+<div class="container">
+
+<h2>
+
+Search Valorant Players
+
+</h2>
+
+<p>
+
+Search by player, role, mouse, keyboard or monitor.
+
+</p>
+
+
+<input
+id="playerSearch"
+type="search"
+placeholder="Search player, role, mouse, keyboard or monitor..."
+autocomplete="off"
+>
+
+
+<p id="playerCount">
+
+Loading players...
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+PLAYER FILTERS
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Player Filters
+
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+
+Role
+
+</h3>
+
+
+<select id="roleFilter">
+
+<option value="">
+
+All Roles
+
+</option>
+
+<option value="Duelist">
+
+Duelist
+
+</option>
+
+<option value="Initiator">
+
+Initiator
+
+</option>
+
+<option value="Controller">
+
+Controller
+
+</option>
+
+<option value="Sentinel">
+
+Sentinel
+
+</option>
+
+<option value="Flex">
+
+Flex
+
+</option>
+
+<option value="Chamber">
+
+Chamber
+
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+DPI
+
+</h3>
+
+
+<select id="dpiFilter">
+
+<option value="">
+
+All DPI
+
+</option>
+
+<option value="400">
+
+400
+
+</option>
+
+<option value="800">
+
+800
+
+</option>
+
+<option value="1600">
+
+1600
+
+</option>
+
+<option value="3200">
+
+3200
+
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+Polling Rate
+
+</h3>
+
+
+<select id="pollingFilter">
+
+<option value="">
+
+All Polling Rates
+
+</option>
+
+<option value="500 Hz">
+
+500 Hz
+
+</option>
+
+<option value="1000 Hz">
+
+1000 Hz
+
+</option>
+
+<option value="2000 Hz">
+
+2000 Hz
+
+</option>
+
+<option value="4000 Hz">
+
+4000 Hz
+
+</option>
+
+<option value="8000 Hz">
+
+8000 Hz
+
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+Handedness
+
+</h3>
+
+
+<select id="handFilter">
+
+<option value="">
+
+All
+
+</option>
+
+<option value="Right">
+
+Right
+
+</option>
+
+<option value="Left">
+
+Left
+
+</option>
+
+</select>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+PLAYER DATABASE
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Player Sensitivity Settings
+
+</h2>
+
+
+<div
+id="playersContainer"
+class="grid"
+>
+
+<div class="card">
+
+<h3>
+
+Loading Players...
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+EDPI CALCULATOR
+===================================================== -->
+
+<section id="edpi-calculator">
+
+<div class="container">
+
+<h2>
+
+Valorant eDPI Calculator
+
+</h2>
+
+<p>
+
+eDPI = DPI × Valorant Sensitivity
+
+</p>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+
+Calculate Your eDPI
+
+</h3>
+
+
+<label for="dpi">
+
+Mouse DPI
+
+</label>
+
+
+<input
+id="dpi"
+type="number"
+min="1"
+step="1"
+placeholder="Example: 1600"
+>
+
+
+<label for="sens">
+
+Valorant Sensitivity
+
+</label>
+
+
+<input
+id="sens"
+type="number"
+min="0"
+step="0.001"
+placeholder="Example: 0.084"
+>
+
+
+<h3>
+
+Your eDPI
+
+</h3>
+
+
+<h1 id="edpi">
+
+-
+
+</h1>
+
+
+<div class="hero-buttons">
+
+
+<button
+id="resetEDPI"
+type="button"
+class="btn"
+>
+
+Reset
+
+</button>
+
+
+<button
+id="exampleEDPI"
+type="button"
+class="btn btn-outline"
+>
+
+Example
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+eDPI Example
+
+</h3>
+
+
+<p>
+
+<strong>
+
+800 DPI × 0.30 Sensitivity
+
+</strong>
+
+</p>
+
+
+<h2>
+
+240 eDPI
+
+</h2>
+
+
+<p>
+
+<strong>
+
+1600 DPI × 0.15 Sensitivity
+
+</strong>
+
+</p>
+
+
+<h2>
+
+240 eDPI
+
+</h2>
+
+
+<p>
+
+Both settings have the same effective sensitivity.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+SENSITIVITY RANGES
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Valorant Sensitivity Ranges
+
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+
+🐢 Low Sensitivity
+
+</h3>
+
+<h2>
+
+Below 200 eDPI
+
+</h2>
+
+<p>
+
+More arm movement and precise micro adjustments.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+🎯 Medium Sensitivity
+
+</h3>
+
+<h2>
+
+200–320 eDPI
+
+</h2>
+
+<p>
+
+Balanced sensitivity for tracking and flicking.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+⚡ High Sensitivity
+
+</h3>
+
+<h2>
+
+Above 320 eDPI
+
+</h2>
+
+<p>
+
+Faster turning with smaller mouse movements.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+CROSSHAIRS
+===================================================== -->
+
+<section id="crosshairs">
+
+<div class="container">
+
+<h2>
+
+Valorant Crosshairs
+
+</h2>
+
+<p>
+
+Browse player crosshairs and copy the Valorant import code.
+
+</p>
+
+
+<div
+id="crosshairContainer"
+class="grid"
+>
+
+<div class="card">
+
+<h3>
+
+Loading Crosshairs...
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+GEAR
+===================================================== -->
+
+<section id="gear">
+
+<div class="container">
+
+<h2>
+
+Valorant Player Gear
+
+</h2>
+
+<p>
+
+Search mouse, keyboard, monitor, headset and mousepad setups.
+
+</p>
+
+
+<input
+id="gearSearch"
+type="search"
+placeholder="Search player, mouse, keyboard, monitor or headset..."
+autocomplete="off"
+>
+
+
+<br>
+
+<br>
+
+
+<div
+id="gearContainer"
+class="grid"
+>
+
+<div class="card">
+
+<h3>
+
+Loading Gear...
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+GRAPHICS
+===================================================== -->
+
+<section id="graphics">
+
+<div class="container">
+
+<h2>
+
+Valorant Graphics Settings
+
+</h2>
+
+<p>
+
+Find graphics settings based on your PC or laptop performance.
+
+</p>
+
+
+<div
+id="graphicsContainer"
+class="grid"
+>
+
+<div class="card">
+
+<h3>
+
+Loading Graphics Profiles...
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+GRAPHICS INFORMATION
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Important Valorant Graphics Settings
+
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+
+🖥 Display Mode
+
+</h3>
+
+<p>
+
+Fullscreen is recommended for competitive gameplay.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+⚙ Multithreaded Rendering
+
+</h3>
+
+<p>
+
+Enable multithreaded rendering on supported processors.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+⚡ NVIDIA Reflex
+
+</h3>
+
+<p>
+
+Use NVIDIA Reflex when supported by your NVIDIA GPU.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+🚫 VSync
+
+</h3>
+
+<p>
+
+Competitive players generally disable VSync to avoid additional latency.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+✨ Bloom
+
+</h3>
+
+<p>
+
+Disable Bloom if you prefer fewer visual effects.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+🌑 Cast Shadows
+
+</h3>
+
+<p>
+
+Disable Cast Shadows when prioritizing maximum FPS.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+AUDIO
+===================================================== -->
+
+<section id="audio">
+
+<div class="container">
+
+<h2>
+
+Valorant Audio Settings
+
+</h2>
+
+<p>
+
+Competitive, esports, casual, laptop and streaming audio profiles.
+
+</p>
+
+
+<div
+id="audioContainer"
+class="grid"
+>
+
+<div class="card">
+
+<h3>
+
+Loading Audio Profiles...
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+AUDIO INFORMATION
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Competitive Audio Recommendations
+
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+
+🎧 HRTF
+
+</h3>
+
+<p>
+
+Use HRTF with stereo headphones when you prefer directional audio processing.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+🔊 Sound Effects
+
+</h3>
+
+<p>
+
+Keep sound effects clearly audible for footsteps and abilities.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+🎵 Music
+
+</h3>
+
+<p>
+
+Lower unnecessary music when prioritizing competitive audio information.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+🎙 Team Voice
+
+</h3>
+
+<p>
+
+Keep teammate communication at a clearly audible volume.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+🔈 Stereo
+
+</h3>
+
+<p>
+
+Use the audio configuration that matches your actual listening setup.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+🪟 Windows Audio
+
+</h3>
+
+<p>
+
+Avoid stacking unnecessary spatial audio processing with in-game HRTF.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+MOUSE SETTINGS
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Valorant Mouse Settings
+
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+
+🖱 DPI
+
+</h3>
+
+<p>
+
+Common DPI values include 400, 800 and 1600.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+🎯 Sensitivity
+
+</h3>
+
+<p>
+
+Choose a sensitivity that allows controlled micro adjustments and comfortable turning.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+📊 eDPI
+
+</h3>
+
+<p>
+
+Use eDPI to compare effective sensitivity between different DPI values.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+🔭 Scoped Sensitivity
+
+</h3>
+
+<p>
+
+Scoped sensitivity changes aim speed while using scoped weapons.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+⚡ Polling Rate
+
+</h3>
+
+<p>
+
+Use a stable polling rate supported by your mouse and system.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+✋ Handedness
+
+</h3>
+
+<p>
+
+Choose the first-person handedness that gives you the clearest visual comfort.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+RELATED GUIDES
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Related Guides
+
+</h2>
+
+
+<div class="grid">
+
+
+<a
+href="../platforms/obs.html"
+class="card"
+>
+
+<h3>
+
+🎥 OBS Settings
+
+</h3>
+
+<p>
+
+Configure OBS for streaming and recording.
+
+</p>
+
+</a>
+
+
+
+<a
+href="../tools/internet-speed.html"
+class="card"
+>
+
+<h3>
+
+🌐 Internet Speed
+
+</h3>
+
+<p>
+
+Understand upload speed, latency and packet loss.
+
+</p>
+
+</a>
+
+
+
+<a
+href="../tools/bitrate-calculator.html"
+class="card"
+>
+
+<h3>
+
+🧮 Bitrate Calculator
+
+</h3>
+
+<p>
+
+Calculate recommended streaming bitrate.
+
+</p>
+
+</a>
+
+
+
+<a
+href="../downloads.html"
+class="card"
+>
+
+<h3>
+
+⬇ Downloads
+
+</h3>
+
+<p>
+
+Find streaming and creator software.
+
+</p>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="container">
+
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>
+
+🎮 Stream Guides
+
+</h3>
+
+<p>
+
+Streaming, gaming settings and creator tools.
+
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+
+Platforms
+
+</h3>
+
+<a href="../platforms/obs.html">
+
+OBS
+
+</a>
+
+<a href="../platforms/youtube.html">
+
+YouTube
+
+</a>
+
+<a href="../platforms/twitch.html">
+
+Twitch
+
+</a>
+
+<a href="../platforms/kick.html">
+
+Kick
+
+</a>
+
+<a href="../platforms/loco.html">
+
+Loco
+
+</a>
+
+</div>
+
+
+
+<div>
+
+<h3>
+
+Earning
+
+</h3>
+
+<a href="../earnings/youtube.html">
+
+YouTube Earning
+
+</a>
+
+<a href="../earnings/twitch.html">
+
+Twitch Earning
+
+</a>
+
+<a href="../earnings/kick.html">
+
+Kick Earning
+
+</a>
+
+<a href="../earnings/loco.html">
+
+Loco Earning
+
+</a>
+
+</div>
+
+
+
+<div>
+
+<h3>
+
+Tools
+
+</h3>
+
+<a href="../tools/bitrate-calculator.html">
+
+Bitrate Calculator
+
+</a>
+
+<a href="../tools/internet-speed.html">
+
+Internet Speed
+
+</a>
+
+<a href="../tools/currency-converter.html">
+
+Currency Converter
+
+</a>
+
+</div>
+
+
+
+<div>
+
+<h3>
+
+Supports
+
+</h3>
+
+<a href="../about.html">
+
+About
+
+</a>
+
+<a href="../contact.html">
+
+Contact
+
+</a>
+
+<a href="../faq.html">
+
+FAQ
+
+</a>
+
+</div>
+
+
+
+<div>
+
+<h3>
+
+Legal
+
+</h3>
+
+<a href="../legal/privacy-policy.html">
+
+Privacy Policy
+
+</a>
+
+<a href="../legal/terms.html">
+
+Terms of Service
+
+</a>
+
+<a href="../legal/cookie-policy.html">
+
+Cookie Policy
+
+</a>
+
+<a href="../legal/disclaimer.html">
+
+Disclaimer
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 Stream Guides. All Rights Reserved.
+
+</p>
+
+<p>
+
+Built for Streamers 🎮
+
+</p>
+
+</div>
+
+</footer>
+
+
+<script src="../js/theme.js"></script>
+
+<script src="../js/navigation.js"></script>
+
+
+</body>
+
+</html>

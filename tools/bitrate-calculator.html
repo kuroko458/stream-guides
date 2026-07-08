@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OBS Bitrate Calculator 2026 | Stream Guides</title>
+
+<meta name="description" content="Free OBS Bitrate Calculator for YouTube, Twitch, Kick and Loco. Calculate the best streaming bitrate based on upload speed, resolution, FPS and platform.">
+
+<meta name="keywords" content="OBS Bitrate Calculator, Streaming Bitrate, OBS Settings, YouTube Bitrate, Twitch Bitrate, Kick Bitrate, Loco Bitrate">
+
+<link rel="icon" href="../favicon.ico">
+
+<link rel="manifest" href="../manifest.json">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/dark.css">
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script defer src="../js/main.js"></script>
+<script defer src="../js/earnings.js"></script>
+<script defer src="../js/calculator.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<div class="logo">
+
+🎮 <span>Stream</span> Guides
+
+</div>
+
+<nav id="nav">
+
+<a href="../index.html">Home</a>
+
+<a href="../platforms/obs.html">OBS</a>
+
+<a href="../platforms/youtube.html">YouTube</a>
+
+<a href="../platforms/twitch.html">Twitch</a>
+
+<a href="../platforms/kick.html">Kick</a>
+
+<a href="../platforms/loco.html">Loco</a>
+
+<a href="bitrate-calculator.html" class="active">Calculator</a>
+
+<a href="../earnings/index.html">Earnings</a>
+
+<a href="../faq.html">FAQ</a>
+
+<a href="../admin/admin.html">Admin</a>
+
+</nav>
+
+<div class="actions">
+
+<button id="themeBtn">🌙</button>
+
+<button id="menuBtn">☰</button>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<h1>
+
+OBS Bitrate Calculator
+
+</h1>
+
+<p>
+
+Calculate the best bitrate for YouTube, Twitch, Kick and Loco based on your upload speed, resolution and FPS.
+
+</p>
+
+</div>
+
+<div class="hero-buttons">
+
+<a href="../platforms/youtube.html" class="btn">
+
+View OBS Guides
+
+</a>
+
+<a href="../earnings/index.html" class="btn btn-outline">
+
+Learn About Earnings
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Streaming Calculator
+
+</h2>
+
+<div class="card">
+
+<label>
+
+Streaming Platform
+
+</label>
+
+<select id="platform">
+
+<option value="youtube">YouTube</option>
+
+<option value="twitch">Twitch</option>
+
+<option value="kick">Kick</option>
+
+<option value="loco">Loco</option>
+
+</select>
+
+<label>
+
+Upload Speed (Mbps)
+
+</label>
+
+<input
+type="number"
+id="upload"
+placeholder="Example: 20"
+min="1"
+step="0.1">
+
+<label>
+
+Resolution
+
+</label>
+
+<select id="resolution">
+
+<option value="360">360p</option>
+
+<option value="480">480p</option>
+
+<option value="720">720p</option>
+
+<option value="1080" selected>1080p</option>
+
+<option value="1440">1440p</option>
+
+<option value="2160">4K</option>
+
+</select>
+
+<label>
+
+Frame Rate
+
+</label>
+
+<select id="fps">
+
+<option value="30">30 FPS</option>
+
+<option value="60" selected>60 FPS</option>
+
+</select>
+
+<label>Encoder</label>
+
+<select id="encoder">
+
+<option value="auto">🤖 Auto Detect (Recommended)</option>
+
+<optgroup label="NVIDIA">
+
+<option value="nvenc-av1">🟢 NVENC AV1 ⭐ Best for YouTube</option>
+
+<option value="nvenc-h264">🟢 NVENC H.264 ⭐ Best Overall</option>
+
+<option value="nvenc-hevc">🟡 NVENC HEVC (H.265) — Recording only, not recommended for most live streaming</option>
+
+</optgroup>
+
+<optgroup label="AMD">
+
+<option value="amf-av1">🟢 AMD AMF AV1 ⭐ Best for modern AMD GPUs</option>
+
+<option value="amf-h264">🟢 AMD AMF H.264 ⭐ Recommended</option>
+
+<option value="amf-hevc">🟡 AMD AMF HEVC — Recording only, limited live streaming support</option>
+
+</optgroup>
+
+<optgroup label="Intel">
+
+<option value="qsv-av1">🟢 Intel Quick Sync AV1 ⭐ Recommended</option>
+
+<option value="qsv-h264">🟢 Intel Quick Sync H.264 ⭐ Recommended</option>
+
+<option value="qsv-hevc">🟡 Intel Quick Sync HEVC — Recording only</option>
+
+</optgroup>
+
+<optgroup label="CPU">
+
+<option value="x264">🟢 x264 (CPU) ⭐ Good if CPU is powerful</option>
+
+<option value="svt-av1">🔴 SVT-AV1 — Not recommended for live streaming (very CPU intensive)</option>
+
+<option value="aom-av1">🔴 AOM AV1 — Not recommended for live streaming (extremely slow)</option>
+
+</optgroup>
+
+<optgroup label="Apple (macOS)">
+
+<option value="vt-h264">🟢 Apple VT H.264 ⭐ Recommended on macOS</option>
+
+<option value="vt-hevc">🟡 Apple VT HEVC — Better for recording than streaming</option>
+
+</optgroup>
+
+<optgroup label="FFmpeg / Advanced">
+
+<option value="ffmpeg-h264">🟡 FFmpeg H.264 — Advanced users only</option>
+
+<option value="ffmpeg-hevc">🔴 FFmpeg HEVC — Recording only</option>
+
+<option value="ffmpeg-av1">🔴 FFmpeg AV1 — Experimental, not recommended for live streaming</option>
+
+</optgroup>
+
+</select>
+
+<button
+class="btn"
+onclick="calculateBitrate()">
+
+Calculate Best Settings
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Calculation Results
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+🎯 Recommended Bitrate
+
+</h3>
+
+<h2 id="recommendedBitrate">
+
+--
+
+</h2>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🛡 Safe Bitrate
+
+</h3>
+
+<h2 id="safeBitrate">
+
+--
+
+</h2>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🎥 Recommended Encoder
+
+</h3>
+
+<h2 id="recommendedEncoder">
+
+--
+
+</h2>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+📶 Internet Quality
+
+</h3>
+
+<h2 id="internetQuality">
+
+--
+
+</h2>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Streaming Analysis
+
+</h2>
+
+<div class="card">
+
+<p id="analysis">
+
+Enter your streaming details above and click
+<a href="bitrate-calculator.html" style="color: rgb(0, 174, 255);">
+    <strong>Calculate Best Settings</strong>
+</a>
+to receive personalized bitrate recommendations.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Recommended Bitrates by Platform
+
+</h2>
+
+<table class="settings-table">
+
+<thead>
+
+<tr>
+
+<th>Platform</th>
+
+<th>1080p30</th>
+
+<th>1080p60</th>
+
+<th>1440p60</th>
+
+<th>4K60</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>YouTube</td>
+
+<td>4500–8000 Kbps</td>
+
+<td>6000–10000 Kbps</td>
+
+<td>12000–24000 Kbps</td>
+
+<td>20000–51000 Kbps</td>
+
+</tr>
+
+<tr>
+
+<td>Twitch</td>
+
+<td>4500 Kbps</td>
+
+<td>6000 Kbps</td>
+
+<td>Not Recommended</td>
+
+<td>Not Supported</td>
+
+</tr>
+
+<tr>
+
+<td>Kick</td>
+
+<td>6000 Kbps</td>
+
+<td>8000–10000 Kbps</td>
+
+<td>12000–18000 Kbps</td>
+
+<td>Experimental</td>
+
+</tr>
+
+<tr>
+
+<td>Loco</td>
+
+<td>4500–6000 Kbps</td>
+
+<td>6000 Kbps</td>
+
+<td>Limited</td>
+
+<td>Not Recommended</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Minimum Internet Speed
+
+</h2>
+
+<table class="settings-table">
+
+<thead>
+
+<tr>
+
+<th>Upload Speed</th>
+
+<th>Recommended Streaming Quality</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>2 Mbps</td>
+
+<td>360p30</td>
+
+<td>Basic</td>
+
+</tr>
+
+<tr>
+
+<td>4 Mbps</td>
+
+<td>480p30</td>
+
+<td>Fair</td>
+
+</tr>
+
+<tr>
+
+<td>7 Mbps</td>
+
+<td>720p30</td>
+
+<td>Good</td>
+
+</tr>
+
+<tr>
+
+<td>10 Mbps</td>
+
+<td>720p60 / 1080p30</td>
+
+<td>Very Good</td>
+
+</tr>
+
+<tr>
+
+<td>15 Mbps</td>
+
+<td>1080p60</td>
+
+<td>Excellent</td>
+
+</tr>
+
+<tr>
+
+<td>30 Mbps</td>
+
+<td>1440p60</td>
+
+<td>Professional</td>
+
+</tr>
+
+<tr>
+
+<td>60 Mbps</td>
+
+<td>4K60</td>
+
+<td>Premium</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Platform Recommendations
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+📺 YouTube
+
+</h3>
+
+<p>
+
+Supports the highest bitrates and AV1 encoding.
+
+Ideal for creators streaming in 1080p, 1440p and 4K.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+💜 Twitch
+
+</h3>
+
+<p>
+
+Recommended maximum bitrate is around 6000 Kbps.
+
+Great for 720p60 and 1080p60 streaming.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+💚 Kick
+
+</h3>
+
+<p>
+
+Higher bitrate support than Twitch.
+
+Recommended 8000–10000 Kbps for smooth 1080p60 streams.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🎮 Loco
+
+</h3>
+
+<p>
+
+Optimized for gaming streams.
+
+1080p60 at around 6000 Kbps provides excellent quality.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Encoder Comparison
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+AV1
+
+</h3>
+
+<p>
+
+Best video quality with the lowest bitrate.
+
+Recommended for RTX 40/50 Series and AMD RX 7000 GPUs.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+NVENC H.264
+
+</h3>
+
+<p>
+
+Excellent quality with very low CPU usage.
+
+Recommended for most NVIDIA RTX users.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+AMD AMF
+
+</h3>
+
+<p>
+
+Hardware encoder for AMD graphics cards.
+
+Provides smooth performance with modern GPUs.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+x264
+
+</h3>
+
+<p>
+
+CPU-based encoder.
+
+Use only if your processor has enough available performance.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+OBS Streaming Tips
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+🎥 Use Hardware Encoding
+
+</h3>
+
+<p>
+
+If you have an NVIDIA RTX GPU, use NVENC AV1 (RTX 40/50 Series) or NVENC H.264 (RTX 20/30 Series). AMD users should use the latest AMF encoder. Hardware encoders reduce CPU usage while maintaining excellent video quality.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🌐 Always Use Ethernet
+
+</h3>
+
+<p>
+
+A wired Ethernet connection is far more stable than Wi-Fi. Packet loss and latency spikes can cause dropped frames and buffering during live streams.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+⚡ Leave Upload Headroom
+
+</h3>
+
+<p>
+
+Never stream using 100% of your upload bandwidth. Keep at least 20–30% available for game traffic, voice chat and network stability.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🎤 Improve Audio Quality
+
+</h3>
+
+<p>
+
+Use 48 kHz sample rate, AAC audio at 160–320 Kbps and enable microphone noise suppression for a cleaner stream.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Common Bitrate Mistakes
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+❌ Bitrate Too High
+
+</h3>
+
+<p>
+
+Using more bitrate than your internet can handle causes dropped frames, buffering and unstable streams.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+❌ Wrong Resolution
+
+</h3>
+
+<p>
+
+Streaming at 1080p with a slow connection usually looks worse than a stable 720p stream.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+❌ Wrong Encoder
+
+</h3>
+
+<p>
+
+Choose a hardware encoder whenever possible. Using x264 on a weak CPU may reduce game performance.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+❌ Ignoring Platform Limits
+
+</h3>
+
+<p>
+
+Each platform has recommended bitrate ranges. Exceeding them rarely improves quality and may reduce viewer compatibility.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+OBS Optimization Guide
+
+</h2>
+
+<table class="settings-table">
+
+<thead>
+
+<tr>
+
+<th>Setting</th>
+
+<th>Recommended Value</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Output Mode</td>
+
+<td>Advanced</td>
+
+</tr>
+
+<tr>
+
+<td>Rate Control</td>
+
+<td>CBR</td>
+
+</tr>
+
+<tr>
+
+<td>Keyframe Interval</td>
+
+<td>2 Seconds</td>
+
+</tr>
+
+<tr>
+
+<td>Preset</td>
+
+<td>Quality / P6</td>
+
+</tr>
+
+<tr>
+
+<td>Multipass</td>
+
+<td>Two Pass</td>
+
+</tr>
+
+<tr>
+
+<td>Psycho Visual Tuning</td>
+
+<td>Enabled</td>
+
+</tr>
+
+<tr>
+
+<td>Look Ahead</td>
+
+<td>Disabled</td>
+
+</tr>
+
+<tr>
+
+<td>Audio Bitrate</td>
+
+<td>160–320 Kbps AAC</td>
+
+</tr>
+
+<tr>
+
+<td>Sample Rate</td>
+
+<td>48 kHz</td>
+
+</tr>
+
+<tr>
+
+<td>Color Space</td>
+
+<td>Rec.709</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Internet Speed Guide
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+2–5 Mbps
+
+</h3>
+
+<p>
+
+Best for 360p or 480p streaming.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+6–10 Mbps
+
+</h3>
+
+<p>
+
+Ideal for 720p streaming at 30 or 60 FPS.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+15–25 Mbps
+
+</h3>
+
+<p>
+
+Recommended for smooth 1080p60 streaming on most platforms.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+30+ Mbps
+
+</h3>
+
+<p>
+
+Perfect for high-quality 1440p and 4K streaming with plenty of bandwidth headroom.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Quick Recommendations
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+🟢 Beginners
+
+</h3>
+
+<p>
+
+720p60, 4500 Kbps, NVENC H.264, Ethernet connection.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+⭐ Intermediate
+
+</h3>
+
+<p>
+
+1080p60, 6000–8000 Kbps, NVENC H.264 or AV1 depending on GPU.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🚀 Professional
+
+</h3>
+
+<p>
+
+1440p60, AV1 encoder, wired internet, dedicated streaming PC if available.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🎯 Best Overall
+
+</h3>
+
+<p>
+
+1080p60 with AV1 or NVENC provides the best balance of quality, performance and viewer compatibility.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Frequently Asked Questions
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+What bitrate should I use for 1080p60?
+
+</h3>
+
+<p>
+
+For most platforms, 6000–10000 Kbps is recommended. Twitch generally recommends up to 6000 Kbps, while YouTube and Kick can benefit from higher bitrates depending on your connection and stream settings.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Should I always use the highest bitrate?
+
+</h3>
+
+<p>
+
+No. Your bitrate should match both your upload speed and the platform's recommendations. Using an unnecessarily high bitrate can cause buffering and dropped frames for you or your viewers.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Does AV1 improve stream quality?
+
+</h3>
+
+<p>
+
+Yes. AV1 delivers better image quality than H.264 at the same bitrate, but it requires supported hardware and platform compatibility.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+How much upload speed do I need?
+
+</h3>
+
+<p>
+
+A good rule is to have at least twice the upload speed of your selected bitrate. For example, a 6000 Kbps stream should ideally have at least a 12–15 Mbps upload connection for stability.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Can I stream over Wi-Fi?
+
+</h3>
+
+<p>
+
+You can, but a wired Ethernet connection is strongly recommended for stable streaming. Wi-Fi is more susceptible to interference, latency and packet loss.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Which encoder should I choose?
+
+</h3>
+
+<p>
+
+Use AV1 if your GPU supports it. Otherwise, NVENC H.264 is an excellent choice for NVIDIA GPUs. AMD users should use AMF, while x264 is best reserved for systems with powerful CPUs.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Explore More Guides
+
+</h2>
+
+<div class="grid">
+
+<a class="card platform-card" href="../platforms/youtube.html">
+
+<h3>📺 YouTube OBS Settings</h3>
+
+<p>Complete guide for streaming on YouTube.</p>
+
+</a>
+
+<a class="card platform-card" href="../platforms/twitch.html">
+
+<h3>💜 Twitch OBS Settings</h3>
+
+<p>Recommended settings for Twitch creators.</p>
+
+</a>
+
+<a class="card platform-card" href="../platforms/kick.html">
+
+<h3>💚 Kick OBS Settings</h3>
+
+<p>Best bitrate and encoder recommendations for Kick.</p>
+
+</a>
+
+<a class="card platform-card" href="../platforms/loco.html">
+
+<h3>🎮 Loco OBS Settings</h3>
+
+<p>Optimized OBS settings for Loco streaming.</p>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>🎮 Stream Guides</h3>
+
+<p>
+Streaming, gaming settings and creator tools.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Platforms</h3>
+
+<a href="../platforms/obs.html">OBS</a>
+
+<a href="../platforms/youtube.html">YouTube</a>
+
+<a href="../platforms/twitch.html">Twitch</a>
+
+<a href="../platforms/kick.html">Kick</a>
+
+<a href="../platforms/loco.html">Loco</a>
+
+</div>
+
+
+<div>
+
+<h3>Earning</h3>
+
+<a href="../earnings/index.html">
+Earnings Calculator
+</a>
+
+<a href="../earnings/youtube.html">
+YouTube Earning
+</a>
+
+<a href="../earnings/twitch.html">
+Twitch Earning
+</a>
+
+<a href="../earnings/kick.html">
+Kick Earning
+</a>
+
+<a href="../earnings/loco.html">
+Loco Earning
+</a>
+
+</div>
+
+
+<div>
+
+<h3>Tools</h3>
+
+<a href="../tools/bitrate-calculator.html">
+Bitrate Calculator
+</a>
+
+<a href="../tools/internet-speed.html">
+Internet Speed
+</a>
+
+<a href="../tools/currency-converter.html">
+Currency Converter
+</a>
+
+</div>
+
+
+<div>
+
+<h3>Games</h3>
+
+<a href="../games/valorant.html">
+Valorant
+</a>
+
+</div>
+
+
+<div>
+
+<h3>Support</h3>
+
+<a href="../about.html">About</a>
+
+<a href="../contact.html">Contact</a>
+
+<a href="../faq.html">FAQ</a>
+
+<a href="../downloads.html">Downloads</a>
+
+</div>
+
+
+<div>
+
+<h3>Legal</h3>
+
+<a href="../legal/privacy-policy.html">
+Privacy Policy
+</a>
+
+<a href="../legal/terms.html">
+Terms of Service
+</a>
+
+<a href="../legal/cookie-policy.html">
+Cookie Policy
+</a>
+
+<a href="../legal/disclaimer.html">
+Disclaimer
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<p>
+© 2026 Stream Guides. All Rights Reserved.
+</p>
+
+<p>
+Built for Streamers 🎮
+</p>
+
+</div>
+
+</footer>
+
+<script src="../js/theme.js"></script>
+<script src="../js/navigation.js"></script>
+
+</body>
+
+</html>

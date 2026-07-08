@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | Stream Guides</title>
+
+<meta name="description" content="Contact Stream Guides for questions, feedback, bug reports, business inquiries and feature requests.">
+
+<link rel="icon" href="favicon.ico">
+
+<link rel="manifest" href="manifest.json">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/dark.css">
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script defer src="js/main.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<div class="logo">
+🎮 <span>Stream</span> Guides
+</div>
+
+<nav id="nav">
+
+<a href="index.html">Home</a>
+
+<a href="platforms/obs.html">OBS</a>
+
+<a href="platforms/youtube.html">YouTube</a>
+
+<a href="platforms/twitch.html">Twitch</a>
+
+<a href="platforms/kick.html">Kick</a>
+
+<a href="platforms/loco.html">Loco</a>
+
+<a href="tools/bitrate-calculator.html">Calculator</a>
+
+<a href="downloads.html">Downloads</a>
+
+<a href="earnings/index.html">Earnings</a>
+
+<a href="contact.html" class="active">Contact</a>
+
+<a href="admin/admin.html">Admin</a>
+
+</nav>
+
+<div class="actions">
+
+<button id="themeBtn">🌙</button>
+
+<button id="menuBtn">☰</button>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<h1>
+
+Contact Stream Guides
+
+</h1>
+
+<p>
+
+Have a question, found an error, or want to suggest a new feature? We'd love to hear from you.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Send Us a Message
+
+</h2>
+
+<div class="card">
+
+<form>
+
+<label for="name">
+
+Full Name
+
+</label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter your full name"
+required>
+
+<label for="email">
+
+Email Address
+
+</label>
+
+<input
+type="email"
+id="email"
+placeholder="Enter your email"
+required>
+
+<label for="subject">
+
+Subject
+
+</label>
+
+<input
+type="text"
+id="subject"
+placeholder="Enter subject"
+required>
+
+<label for="platform">
+
+Streaming Platform
+
+</label>
+
+<select id="platform">
+
+<option>General Question</option>
+
+<option>OBS Studio</option>
+
+<option>YouTube</option>
+
+<option>Twitch</option>
+
+<option>Kick</option>
+
+<option>Loco</option>
+
+<option>Bitrate Calculator</option>
+
+<option>Internet Speed</option>
+
+<option>Downloads</option>
+
+<option>Business Inquiry</option>
+
+<option>Bug Report</option>
+
+<option>Feature Request</option>
+
+</select>
+
+<label for="message">
+
+Message
+
+</label>
+
+<textarea
+id="message"
+rows="8"
+placeholder="Write your message here..."
+required></textarea>
+
+<button class="btn" type="submit">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Contact Information
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+📧 Email
+
+</h3>
+
+<p>
+
+support@streamguides.com
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+💼 Business
+
+</h3>
+
+<p>
+
+business@streamguides.com
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🐞 Report a Bug
+
+</h3>
+
+<p>
+
+bugs@streamguides.com
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+💡 Feature Requests
+
+</h3>
+
+<p>
+
+ideas@streamguides.com
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Why Contact Us?
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+❓ General Questions
+
+</h3>
+
+<p>
+
+Need help choosing OBS settings, bitrate, encoder or streaming platform? Send us your questions.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🐞 Report Website Issues
+
+</h3>
+
+<p>
+
+Found outdated information, broken links or bugs? Let us know so we can fix them quickly.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+💡 Suggest New Features
+
+</h3>
+
+<p>
+
+Recommend new calculators, guides or tools you'd like to see on Stream Guides.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🤝 Business Inquiries
+
+</h3>
+
+<p>
+
+For partnerships, sponsorships or collaboration opportunities, contact our business team.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Follow Stream Guides
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+🌐 Website
+
+</h3>
+
+<p>
+
+Visit our homepage for the latest streaming guides and tools.
+
+</p>
+
+<a href="index.html" class="btn">
+
+Home
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+📺 YouTube Guides
+
+</h3>
+
+<p>
+
+Learn the best OBS settings for YouTube Live.
+
+</p>
+
+<a href="platforms/youtube.html" class="btn">
+
+View Guide
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+💜 Twitch Guides
+
+</h3>
+
+<p>
+
+Find recommended settings for Twitch streaming.
+
+</p>
+
+<a href="platforms/twitch.html" class="btn">
+
+View Guide
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+💚 Kick Guides
+
+</h3>
+
+<p>
+
+Optimize your Kick livestream with our recommendations.
+
+</p>
+
+<a href="platforms/kick.html" class="btn">
+
+View Guide
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Expected Response Time
+
+</h2>
+
+<table class="settings-table">
+
+<thead>
+
+<tr>
+
+<th>Inquiry</th>
+
+<th>Typical Response</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>General Questions</td>
+
+<td>24–48 Hours</td>
+
+</tr>
+
+<tr>
+
+<td>Bug Reports</td>
+
+<td>1–3 Days</td>
+
+</tr>
+
+<tr>
+
+<td>Feature Requests</td>
+
+<td>Reviewed Regularly</td>
+
+</tr>
+
+<tr>
+
+<td>Business Inquiries</td>
+
+<td>2–5 Business Days</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Before Contacting Us
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+📖 Check the FAQ
+
+</h3>
+
+<p>
+
+Many common questions are already answered in our FAQ section.
+
+</p>
+
+<a href="faq.html" class="btn">
+
+Open FAQ
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🧮 Try the Bitrate Calculator
+
+</h3>
+
+<p>
+
+Automatically find the best bitrate before asking for recommendations.
+
+</p>
+
+<a href="tools/bitrate-calculator.html" class="btn">
+
+Open Calculator
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🌐 Read the Internet Guide
+
+</h3>
+
+<p>
+
+Understand upload speed, ping and packet loss before troubleshooting.
+
+</p>
+
+<a href="tools/internet-speed.html" class="btn">
+
+Read Guide
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🎥 Read the OBS Guide
+
+</h3>
+
+<p>
+
+Most OBS configuration questions are covered in our complete setup guide.
+
+</p>
+
+<a href="platforms/obs.html" class="btn">
+
+OBS Guide
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Frequently Asked Questions
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+Do I need an account to contact Stream Guides?
+
+</h3>
+
+<p>
+
+No. Anyone can contact us using the contact form. You don't need to create an account.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Can I request a new streaming guide?
+
+</h3>
+
+<p>
+
+Yes. We regularly add new guides based on community feedback. Send us your suggestion using the contact form.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Can I report incorrect information?
+
+</h3>
+
+<p>
+
+Absolutely. If you notice outdated OBS settings, bitrate recommendations or platform changes, please let us know.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Do you provide technical support?
+
+</h3>
+
+<p>
+
+We provide general guidance about OBS, streaming platforms and our website. We cannot offer remote PC troubleshooting.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Can companies contact you?
+
+</h3>
+
+<p>
+
+Yes. Businesses can contact us regarding partnerships, sponsorships and collaborations.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Is my information shared?
+
+</h3>
+
+<p>
+
+No. Information submitted through the contact form is used only to respond to your inquiry and is not sold to third parties.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="hero">
+
+<div class="container">
+
+<h2>
+
+Thank You for Visiting Stream Guides
+
+</h2>
+
+<p>
+
+Your feedback helps us improve our guides, tools and calculators for the streaming community.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="index.html" class="btn">
+
+🏠 Back to Home
+
+</a>
+
+<a href="downloads.html" class="btn btn-outline">
+
+📥 Downloads
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>🎮 Stream Guides</h3>
+
+<p>
+Streaming, gaming settings and creator tools.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Platforms</h3>
+
+<a href="platforms/obs.html">OBS</a>
+
+<a href="platforms/youtube.html">YouTube</a>
+
+<a href="platforms/twitch.html">Twitch</a>
+
+<a href="platforms/kick.html">Kick</a>
+
+<a href="platforms/loco.html">Loco</a>
+
+</div>
+
+
+<div>
+
+<h3>Earning</h3>
+
+<a href="earnings/index.html">Earnings Calculator</a>
+
+<a href="earnings/youtube.html">YouTube Earning</a>
+
+<a href="earnings/twitch.html">Twitch Earning</a>
+
+<a href="earnings/kick.html">Kick Earning</a>
+
+<a href="earnings/loco.html">Loco Earning</a>
+
+</div>
+
+
+<div>
+
+<h3>Tools</h3>
+
+<a href="tools/bitrate-calculator.html">
+Bitrate Calculator
+</a>
+
+<a href="tools/internet-speed.html">
+Internet Speed
+</a>
+
+<a href="tools/currency-converter.html">
+Currency Converter
+</a>
+
+</div>
+
+
+<div>
+
+<h3>Games</h3>
+
+<a href="games/valorant.html">
+Valorant
+</a>
+
+</div>
+
+
+<div>
+
+<h3>Support</h3>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+<a href="faq.html">FAQ</a>
+
+<a href="downloads.html">Downloads</a>
+
+</div>
+
+
+<div>
+
+<h3>Legal</h3>
+
+<a href="legal/privacy-policy.html">
+Privacy Policy
+</a>
+
+<a href="legal/terms.html">
+Terms of Service
+</a>
+
+<a href="legal/cookie-policy.html">
+Cookie Policy
+</a>
+
+<a href="legal/disclaimer.html">
+Disclaimer
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<p>
+© 2026 Stream Guides. All Rights Reserved.
+</p>
+
+<p>
+Built for Streamers 🎮
+</p>
+
+</div>
+
+</footer>
+
+<script src="js/theme.js"></script>
+<script src="js/navigation.js"></script>
+
+</body>
+
+</html>

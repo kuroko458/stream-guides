@@ -1,0 +1,15 @@
+{
+  "platform": "Twitch",
+  "supportsAV1": false,
+  "supportsHEVC": false,
+  "supportsH264": true,
+  "maxResolution": "1080p60",
+  "recommendedEncoder": "NVENC H.264",
+  "maximumBitrate": 6000,
+  "recommendedBitrates": {
+    "720p60": 5000,
+    "1080p60": 6000
+  },
+  "recommendedKeyframeInterval": 2,
+  "audioBitrate": 160
+}

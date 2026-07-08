@@ -1,0 +1,50 @@
+{
+  "lastUpdated": "2026-07-06",
+  "downloads": [
+    {
+      "name": "OBS Studio",
+      "version": "Latest",
+      "category": "Streaming Software",
+      "website": "https://obsproject.com",
+      "supportedOS": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ]
+    },
+    {
+      "name": "Streamlabs Desktop",
+      "version": "Latest",
+      "category": "Streaming Software",
+      "website": "https://streamlabs.com",
+      "supportedOS": [
+        "Windows",
+        "macOS"
+      ]
+    },
+    {
+      "name": "NVIDIA Broadcast",
+      "version": "Latest",
+      "category": "AI Audio & Video",
+      "website": "https://www.nvidia.com"
+    },
+    {
+      "name": "Voicemeeter Banana",
+      "version": "Latest",
+      "category": "Audio Mixer",
+      "website": "https://vb-audio.com"
+    },
+    {
+      "name": "Elgato Camera Hub",
+      "version": "Latest",
+      "category": "Camera",
+      "website": "https://www.elgato.com"
+    },
+    {
+      "name": "OBS WebSocket",
+      "version": "Included",
+      "category": "OBS Plugin",
+      "website": "https://obsproject.com"
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "lastUpdated": "2026-07-06",
+  "recommendedReserveMbps": 2,
+  "platforms": {
+    "youtube": {
+      "360p30": {
+        "min": 600,
+        "recommended": 1000,
+        "max": 1500
+      },
+      "480p30": {
+        "min": 1000,
+        "recommended": 1800,
+        "max": 2500
+      },
+      "720p30": {
+        "min": 2500,
+        "recommended": 3500,
+        "max": 5000
+      },
+      "720p60": {
+        "min": 3500,
+        "recommended": 5000,
+        "max": 7500
+      },
+      "1080p30": {
+        "min": 4000,
+        "recommended": 6000,
+        "max": 9000
+      },
+      "1080p60": {
+        "min": 6000,
+        "recommended": 9000,
+        "max": 12000
+      },
+      "1440p60": {
+        "min": 12000,
+        "recommended": 18000,
+        "max": 24000
+      },
+      "4K60": {
+        "min": 20000,
+        "recommended": 35000,
+        "max": 51000
+      }
+    },
+
+    "twitch": {
+      "360p30": {
+        "min": 600,
+        "recommended": 1000,
+        "max": 1500
+      },
+      "480p30": {
+        "min": 1200,
+        "recommended": 1800,
+        "max": 2500
+      },
+      "720p30": {
+        "min": 2500,
+        "recommended": 3500,
+        "max": 4500
+      },
+      "720p60": {
+        "min": 3500,
+        "recommended": 5000,
+        "max": 6000
+      },
+      "1080p30": {
+        "min": 4500,
+        "recommended": 5500,
+        "max": 6000
+      },
+      "1080p60": {
+        "min": 5500,
+        "recommended": 6000,
+        "max": 6000
+      }
+    },
+
+    "kick": {
+      "360p30": {
+        "min": 600,
+        "recommended": 1000,
+        "max": 1500
+      },
+      "480p30": {
+        "min": 1200,
+        "recommended": 2000,
+        "max": 3000
+      },
+      "720p30": {
+        "min": 3000,
+        "recommended": 4500,
+        "max": 6000
+      },
+      "720p60": {
+        "min": 4500,
+        "recommended": 6000,
+        "max": 8000
+      },
+      "1080p30": {
+        "min": 5000,
+        "recommended": 7000,
+        "max": 9000
+      },
+      "1080p60": {
+        "min": 7000,
+        "recommended": 9000,
+        "max": 12000
+      },
+      "1440p60": {
+        "min": 12000,
+        "recommended": 16000,
+        "max": 20000
+      }
+    },
+
+    "loco": {
+      "360p30": {
+        "min": 600,
+        "recommended": 1000,
+        "max": 1500
+      },
+      "480p30": {
+        "min": 1200,
+        "recommended": 1800,
+        "max": 2500
+      },
+      "720p30": {
+        "min": 2500,
+        "recommended": 3500,
+        "max": 5000
+      },
+      "720p60": {
+        "min": 3500,
+        "recommended": 5000,
+        "max": 6500
+      },
+      "1080p30": {
+        "min": 4500,
+        "recommended": 6000,
+        "max": 8000
+      },
+      "1080p60": {
+        "min": 6000,
+        "recommended": 8000,
+        "max": 10000
+      }
+    }
+  },
+
+  "encoders": {
+    "AV1": {
+      "efficiency": "Excellent",
+      "cpu": "Low",
+      "quality": "Best"
+    },
+    "HEVC": {
+      "efficiency": "Very High",
+      "cpu": "Low",
+      "quality": "Excellent"
+    },
+    "H264": {
+      "efficiency": "Standard",
+      "cpu": "Low",
+      "quality": "Very Good"
+    }
+  }
+}

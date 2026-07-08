@@ -1,0 +1,33 @@
+{
+  "platforms": {
+    "youtube": {
+      "currency": "USD",
+      "averageRPM": {
+        "gaming": 2.5,
+        "tech": 5.0,
+        "education": 8.0
+      }
+    },
+    "twitch": {
+      "subscriptionShare": "50%-70%",
+      "bitsPerCent": 1
+    },
+    "kick": {
+      "subscriptionShare": "95/5"
+    },
+    "loco": {
+      "creatorProgram": true,
+      "sponsorships": true
+    }
+  },
+  "incomeSources": [
+    "Ads",
+    "Subscriptions",
+    "Donations",
+    "Memberships",
+    "Affiliate Marketing",
+    "Sponsorships",
+    "Merchandise",
+    "Brand Deals"
+  ]
+}

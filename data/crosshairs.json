@@ -1,0 +1,57 @@
+[
+  {
+    "player": "TenZ",
+    "color": "Cyan",
+    "code": "0;s;1;P;c;5;o;1;d;1;0b;0;1b;0",
+    "outline": "On",
+    "centerDot": "Off",
+    "innerLines": "1 / 2 / 2 / 2",
+    "outerLines": "Off",
+    "movementError": "Off",
+    "firingError": "Off"
+  },
+  {
+    "player": "Zekken",
+    "color": "White",
+    "code": "0;s;1;P;c;7;o;1;d;1",
+    "outline": "On",
+    "centerDot": "Off",
+    "innerLines": "1 / 2 / 2 / 2",
+    "outerLines": "Off",
+    "movementError": "Off",
+    "firingError": "Off"
+  },
+  {
+    "player": "aspas",
+    "color": "Green",
+    "code": "0;s;1;P;c;1;o;1",
+    "outline": "On",
+    "centerDot": "Off",
+    "innerLines": "1 / 2 / 2 / 2",
+    "outerLines": "Off",
+    "movementError": "Off",
+    "firingError": "Off"
+  },
+  {
+    "player": "Demon1",
+    "color": "White",
+    "code": "0;s;1;P;c;7",
+    "outline": "Off",
+    "centerDot": "Off",
+    "innerLines": "1 / 2 / 2 / 2",
+    "outerLines": "Off",
+    "movementError": "Off",
+    "firingError": "Off"
+  },
+  {
+    "player": "yay",
+    "color": "Cyan",
+    "code": "0;s;1;P;c;5",
+    "outline": "On",
+    "centerDot": "Off",
+    "innerLines": "1 / 2 / 2 / 2",
+    "outerLines": "Off",
+    "movementError": "Off",
+    "firingError": "Off"
+  }
+]

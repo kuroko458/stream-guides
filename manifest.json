@@ -1,0 +1,9 @@
+{
+  "name": "Stream Guides",
+  "short_name": "StreamGuides",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#2563eb",
+  "icons": []
+}

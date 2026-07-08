@@ -1,0 +1,15 @@
+{
+  "platform": "Loco",
+  "supportsAV1": false,
+  "supportsHEVC": false,
+  "supportsH264": true,
+  "maxResolution": "1080p60",
+  "recommendedEncoder": "NVENC H.264",
+  "recommendedBitrates": {
+    "720p60": 5000,
+    "1080p60": 8000
+  },
+  "recommendedKeyframeInterval": 2,
+  "audioBitrate": 160,
+  "primaryAudience": "India"
+}

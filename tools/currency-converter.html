@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Currency Converter | Stream Guides</title>
+
+<meta name="description" content="Free real-time currency converter for streamers. Convert USD, INR, EUR, GBP, JPY and more.">
+
+<link rel="icon" href="../favicon.ico">
+
+<link rel="manifest" href="../manifest.json">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/dark.css">
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script defer src="../js/main.js"></script>
+<script defer src="../js/earnings.js"></script>
+<script defer src="../js/currency.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<div class="logo">
+
+🎮 <span>Stream</span> Guides
+
+</div>
+
+<nav id="nav">
+
+<a href="../index.html">Home</a>
+<a href="../platforms/obs.html">OBS</a>
+<a href="../platforms/youtube.html">YouTube</a>
+<a href="../platforms/twitch.html">Twitch</a>
+<a href="../platforms/kick.html">Kick</a>
+<a href="../platforms/loco.html">Loco</a>
+<a href="bitrate-calculator.html"></a>Calculator</a>
+<a href="currency-converter.html" class="active">Currency</a>
+<a href="../earnings/index.html">Earnings</a>
+<a href="../faq.html">FAQ</a>
+<a href="../admin/admin.html">Admin</a>
+
+</nav>
+
+<div class="actions">
+
+<button id="themeBtn">🌙</button>
+<button id="menuBtn">☰</button>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<h1>
+
+Real-Time Currency Converter
+
+</h1>
+
+<p>
+
+Convert streaming revenue between currencies using live exchange rates.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Currency Converter
+
+</h2>
+
+<div class="card">
+
+<label>
+
+Amount
+
+</label>
+
+<input
+type="number"
+id="amount"
+placeholder="Enter amount"
+value="1">
+
+<label>
+
+From
+
+</label>
+
+<select id="fromCurrency">
+
+<option value="USD">US Dollar (USD)</option>
+
+<option value="INR">Indian Rupee (INR)</option>
+
+<option value="EUR">Euro (EUR)</option>
+
+<option value="GBP">British Pound (GBP)</option>
+
+<option value="JPY">Japanese Yen (JPY)</option>
+
+<option value="AUD">Australian Dollar (AUD)</option>
+
+<option value="CAD">Canadian Dollar (CAD)</option>
+
+<option value="SGD">Singapore Dollar (SGD)</option>
+
+<option value="AED">UAE Dirham (AED)</option>
+
+<option value="SAR">Saudi Riyal (SAR)</option>
+
+<option value="CNY">Chinese Yuan (CNY)</option>
+
+<option value="KRW">South Korean Won (KRW)</option>
+
+<option value="PKR">Pakistani Rupee (PKR)</option>
+
+<option value="BDT">Bangladeshi Taka (BDT)</option>
+
+<option value="NPR">Nepalese Rupee (NPR)</option>
+
+</select>
+
+<label>
+
+To
+
+</label>
+
+<select id="toCurrency">
+
+<option value="INR" selected>Indian Rupee (INR)</option>
+
+<option value="USD">US Dollar (USD)</option>
+
+<option value="EUR">Euro (EUR)</option>
+
+<option value="GBP">British Pound (GBP)</option>
+
+<option value="JPY">Japanese Yen (JPY)</option>
+
+<option value="AUD">Australian Dollar (AUD)</option>
+
+<option value="CAD">Canadian Dollar (CAD)</option>
+
+<option value="SGD">Singapore Dollar (SGD)</option>
+
+<option value="AED">UAE Dirham (AED)</option>
+
+<option value="SAR">Saudi Riyal (SAR)</option>
+
+<option value="CNY">Chinese Yuan (CNY)</option>
+
+<option value="KRW">South Korean Won (KRW)</option>
+
+<option value="PKR">Pakistani Rupee (PKR)</option>
+
+<option value="BDT">Bangladeshi Taka (BDT)</option>
+
+<option value="NPR">Nepalese Rupee (NPR)</option>
+
+</select>
+
+<br><br>
+
+<button class="btn" onclick="convertCurrency()">
+
+Convert Currency
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Conversion Result
+
+</h2>
+
+<div class="card" id="result">
+
+Waiting for conversion...
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Popular Streaming Revenue Conversions
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+💵 USD → INR
+
+</h3>
+
+<p>
+
+Useful for Indian creators calculating YouTube, Twitch and Kick payouts.
+
+</p>
+
+<button class="btn"
+onclick="quickConvert('USD','INR',100)">
+
+Convert $100
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+💶 EUR → INR
+
+</h3>
+
+<p>
+
+Estimate sponsorship and affiliate payments from European companies.
+
+</p>
+
+<button class="btn"
+onclick="quickConvert('EUR','INR',100)">
+
+Convert €100
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+💷 GBP → INR
+
+</h3>
+
+<p>
+
+Convert payments from UK brands and advertisers.
+
+</p>
+
+<button class="btn"
+onclick="quickConvert('GBP','INR',100)">
+
+Convert £100
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🇦🇪 AED → INR
+
+</h3>
+
+<p>
+
+Useful for creators working with UAE companies.
+
+</p>
+
+<button class="btn"
+onclick="quickConvert('AED','INR',1000)">
+
+Convert 1000 AED
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Why Streamers Need Currency Conversion
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+💰 Sponsorship Payments
+
+</h3>
+
+<p>
+
+Most sponsorships are paid in USD, EUR or GBP.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🎮 Platform Earnings
+
+</h3>
+
+<p>
+
+YouTube, Twitch and Kick generally calculate revenue in foreign currencies.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🛒 Affiliate Income
+
+</h3>
+
+<p>
+
+Amazon and other affiliate programs often pay in USD.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🌍 International Clients
+
+</h3>
+
+<p>
+
+Quickly estimate payments from brands worldwide.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Supported Currencies
+
+</h2>
+
+<table class="settings-table">
+
+<thead>
+
+<tr>
+
+<th>Currency</th>
+
+<th>Code</th>
+
+<th>Region</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr><td>US Dollar</td><td>USD</td><td>United States</td></tr>
+
+<tr><td>Indian Rupee</td><td>INR</td><td>India</td></tr>
+
+<tr><td>Euro</td><td>EUR</td><td>Europe</td></tr>
+
+<tr><td>British Pound</td><td>GBP</td><td>United Kingdom</td></tr>
+
+<tr><td>Japanese Yen</td><td>JPY</td><td>Japan</td></tr>
+
+<tr><td>Australian Dollar</td><td>AUD</td><td>Australia</td></tr>
+
+<tr><td>Canadian Dollar</td><td>CAD</td><td>Canada</td></tr>
+
+<tr><td>Singapore Dollar</td><td>SGD</td><td>Singapore</td></tr>
+
+<tr><td>UAE Dirham</td><td>AED</td><td>United Arab Emirates</td></tr>
+
+<tr><td>Saudi Riyal</td><td>SAR</td><td>Saudi Arabia</td></tr>
+
+<tr><td>Chinese Yuan</td><td>CNY</td><td>China</td></tr>
+
+<tr><td>South Korean Won</td><td>KRW</td><td>South Korea</td></tr>
+
+<tr><td>Pakistani Rupee</td><td>PKR</td><td>Pakistan</td></tr>
+
+<tr><td>Bangladeshi Taka</td><td>BDT</td><td>Bangladesh</td></tr>
+
+<tr><td>Nepalese Rupee</td><td>NPR</td><td>Nepal</td></tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Frequently Asked Questions
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+Are the exchange rates live?
+
+</h3>
+
+<p>
+
+Yes. This converter uses a real-time exchange rate API, so values update according to the latest market rates whenever you perform a conversion.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Which currencies are supported?
+
+</h3>
+
+<p>
+
+The converter supports major global currencies including USD, INR, EUR, GBP, JPY, AUD, CAD, SGD, AED, SAR, CNY, KRW, PKR, BDT and NPR.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Can I use this to calculate YouTube or Twitch earnings?
+
+</h3>
+
+<p>
+
+Yes. It's perfect for converting estimated platform earnings, sponsorship payments and affiliate commissions into your local currency.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Is there any conversion fee?
+
+</h3>
+
+<p>
+
+No. This calculator simply converts currencies using exchange rates and does not charge any fees.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="hero">
+
+<div class="container">
+
+<h2>
+
+Convert Your Streaming Income Instantly
+
+</h2>
+
+<p>
+
+Whether you earn from YouTube, Twitch, Kick, Loco, sponsorships or affiliate marketing, quickly convert your revenue into your preferred currency.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="../earnings/index.html" class="btn">
+
+View Earnings Guide
+
+</a>
+
+<a href="bitrate-calculator.html" class="btn btn-outline">
+
+Bitrate Calculator
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>🎮 Stream Guides</h3>
+
+<p>
+Streaming, gaming settings and creator tools.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Platforms</h3>
+
+<a href="../platforms/obs.html">OBS</a>
+
+<a href="../platforms/youtube.html">YouTube</a>
+
+<a href="../platforms/twitch.html">Twitch</a>
+
+<a href="../platforms/kick.html">Kick</a>
+
+<a href="../platforms/loco.html">Loco</a>
+
+</div>
+
+
+<div>
+
+<h3>Earning</h3>
+
+<a href="../earnings/index.html">
+Earnings Calculator
+</a>
+
+<a href="../earnings/youtube.html">
+YouTube Earning
+</a>
+
+<a href="../earnings/twitch.html">
+Twitch Earning
+</a>
+
+<a href="../earnings/kick.html">
+Kick Earning
+</a>
+
+<a href="../earnings/loco.html">
+Loco Earning
+</a>
+
+</div>
+
+
+<div>
+
+<h3>Tools</h3>
+
+<a href="../tools/bitrate-calculator.html">
+Bitrate Calculator
+</a>
+
+<a href="../tools/internet-speed.html">
+Internet Speed
+</a>
+
+<a href="../tools/currency-converter.html">
+Currency Converter
+</a>
+
+</div>
+
+
+<div>
+
+<h3>Games</h3>
+
+<a href="../games/valorant.html">
+Valorant
+</a>
+
+</div>
+
+
+<div>
+
+<h3>Support</h3>
+
+<a href="../about.html">About</a>
+
+<a href="../contact.html">Contact</a>
+
+<a href="../faq.html">FAQ</a>
+
+<a href="../downloads.html">Downloads</a>
+
+</div>
+
+
+<div>
+
+<h3>Legal</h3>
+
+<a href="../legal/privacy-policy.html">
+Privacy Policy
+</a>
+
+<a href="../legal/terms.html">
+Terms of Service
+</a>
+
+<a href="../legal/cookie-policy.html">
+Cookie Policy
+</a>
+
+<a href="../legal/disclaimer.html">
+Disclaimer
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<p>
+© 2026 Stream Guides. All Rights Reserved.
+</p>
+
+<p>
+Built for Streamers 🎮
+</p>
+
+</div>
+
+</footer>
+
+<script src="../js/theme.js"></script>
+<script src="../js/navigation.js"></script>
+
+</body>
+
+</html>

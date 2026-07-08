@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YouTube OBS Settings 2026 | Stream Guides</title>
+
+<meta name="description" content="Complete YouTube OBS streaming guide with recommended bitrate, encoder, resolution, FPS, audio settings, internet requirements, and monetization tips for 2026.">
+
+<meta name="keywords" content="OBS YouTube Settings, OBS 2026, YouTube Live, Best Bitrate, NVENC AV1, Streaming Guide">
+
+<meta name="author" content="Stream Guides">
+
+<link rel="icon" href="../favicon.ico">
+
+<link rel="manifest" href="../manifest.json">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/dark.css">
+
+<script defer src="../js/main.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<div class="logo">
+
+🎮 <span>Stream</span> Guides
+
+</div>
+
+
+<nav id="nav">
+
+<a href="../index.html">Home</a>
+
+<a href="obs.html">OBS</a>
+
+<a href="youtube.html" class="active">YouTube</a>
+
+<a href="twitch.html">Twitch</a>
+
+<a href="kick.html">Kick</a>
+
+<a href="loco.html">Loco</a>
+
+<a href="../tools/bitrate-calculator.html">Calculator</a>
+
+<a href="../earnings/index.html">Earnings</a>
+
+<a href="../faq.html">FAQ</a>
+
+<a href="../admin/admin.html">Admin</a>
+
+</nav>
+
+<div class="actions">
+
+<button id="themeBtn">🌙</button>
+
+<button id="menuBtn">☰</button>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<h1>
+
+YouTube OBS Settings (2026)
+
+</h1>
+
+<p>
+
+Learn the latest recommended OBS Studio settings for YouTube Live including bitrate, encoder, video resolution, FPS, audio quality, upload speed requirements, and optimization tips for gaming streams.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="../tools/bitrate-calculator.html" class="btn">
+
+Bitrate Calculator
+
+</a>
+
+<a href="../earnings/youtube.html" class="btn btn-outline">
+
+YouTube Earnings
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="quick-summary">
+
+<div class="container">
+
+<h2>
+
+Quick Recommended Settings
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>🎥 Resolution</h3>
+
+<p>
+
+1920 × 1080
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>⚡ FPS</h3>
+
+<p>
+
+60 FPS
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📡 Bitrate</h3>
+
+<p>
+
+6000–9000 Kbps
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🎬 Encoder</h3>
+
+<p>
+
+NVENC AV1
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🎵 Audio</h3>
+
+<p>
+
+192 Kbps AAC
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🌐 Upload Speed</h3>
+
+<p>
+
+15 Mbps or Higher
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Recommended OBS Output Settings
+
+</h2>
+
+<table class="settings-table">
+
+<thead>
+
+<tr>
+
+<th>Setting</th>
+
+<th>Recommended Value</th>
+
+<th>Why?</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Output Mode</td>
+
+<td>Advanced</td>
+
+<td>Unlocks every OBS streaming option.</td>
+
+</tr>
+
+<tr>
+
+<td>Encoder</td>
+
+<td>NVENC AV1</td>
+
+<td>Highest quality on supported NVIDIA GPUs.</td>
+
+</tr>
+
+<tr>
+
+<td>Alternative Encoder</td>
+
+<td>NVENC H.264</td>
+
+<td>Best option for older RTX GPUs.</td>
+
+</tr>
+
+<tr>
+
+<td>Rate Control</td>
+
+<td>CBR</td>
+
+<td>Required for consistent live streaming.</td>
+
+</tr>
+
+<tr>
+
+<td>Bitrate</td>
+
+<td>6000–9000 Kbps</td>
+
+<td>Excellent quality for 1080p60.</td>
+
+</tr>
+
+<tr>
+
+<td>Keyframe Interval</td>
+
+<td>2 Seconds</td>
+
+<td>Recommended by YouTube Live.</td>
+
+</tr>
+
+<tr>
+
+<td>Preset</td>
+
+<td>P6 Quality</td>
+
+<td>Excellent balance between quality and GPU usage.</td>
+
+</tr>
+
+<tr>
+
+<td>Multipass Mode</td>
+
+<td>Two Pass</td>
+
+<td>Improves image quality.</td>
+
+</tr>
+
+<tr>
+
+<td>Look Ahead</td>
+
+<td>Disabled</td>
+
+<td>Reduces GPU usage while gaming.</td>
+
+</tr>
+
+<tr>
+
+<td>Psycho Visual Tuning</td>
+
+<td>Enabled</td>
+
+<td>Improves perceived video quality.</td>
+
+</tr>
+
+<tr>
+
+<td>GPU</td>
+
+<td>0</td>
+
+<td>Main graphics processor.</td>
+
+</tr>
+
+<tr>
+
+<td>Max B-Frames</td>
+
+<td>2</td>
+
+<td>Recommended value for YouTube Live.</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Recommended OBS Video Settings
+
+</h2>
+
+<table class="settings-table">
+
+<thead>
+
+<tr>
+
+<th>Setting</th>
+
+<th>Recommended Value</th>
+
+<th>Reason</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Base (Canvas) Resolution</td>
+
+<td>1920 × 1080</td>
+
+<td>Match your monitor resolution.</td>
+
+</tr>
+
+<tr>
+
+<td>Output (Scaled) Resolution</td>
+
+<td>1920 × 1080</td>
+
+<td>Best quality for YouTube Live.</td>
+
+</tr>
+
+<tr>
+
+<td>Downscale Filter</td>
+
+<td>Lanczos (36 Samples)</td>
+
+<td>Sharper image quality.</td>
+
+</tr>
+
+<tr>
+
+<td>FPS</td>
+
+<td>60 FPS</td>
+
+<td>Smooth gameplay streaming.</td>
+
+</tr>
+
+<tr>
+
+<td>Color Format</td>
+
+<td>NV12</td>
+
+<td>OBS recommended.</td>
+
+</tr>
+
+<tr>
+
+<td>Color Space</td>
+
+<td>Rec.709</td>
+
+<td>Standard for HD video.</td>
+
+</tr>
+
+<tr>
+
+<td>Color Range</td>
+
+<td>Limited</td>
+
+<td>Recommended for streaming.</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Recommended Audio Settings
+
+</h2>
+
+<table class="settings-table">
+
+<thead>
+
+<tr>
+
+<th>Setting</th>
+
+<th>Recommended</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Sample Rate</td>
+
+<td>48 kHz</td>
+
+</tr>
+
+<tr>
+
+<td>Channels</td>
+
+<td>Stereo</td>
+
+</tr>
+
+<tr>
+
+<td>Audio Codec</td>
+
+<td>AAC</td>
+
+</tr>
+
+<tr>
+
+<td>Audio Bitrate</td>
+
+<td>192 Kbps (Recommended)</td>
+
+</tr>
+
+<tr>
+
+<td>Desktop Audio</td>
+
+<td>Track 1</td>
+
+</tr>
+
+<tr>
+
+<td>Microphone</td>
+
+<td>Track 1</td>
+
+</tr>
+
+<tr>
+
+<td>Noise Suppression</td>
+
+<td>RNNoise</td>
+
+</tr>
+
+<tr>
+
+<td>Limiter Filter</td>
+
+<td>Recommended</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+YouTube Recommended Bitrates
+
+</h2>
+
+<table class="settings-table">
+
+<thead>
+
+<tr>
+
+<th>Resolution</th>
+
+<th>FPS</th>
+
+<th>Video Bitrate</th>
+
+<th>Minimum Upload Speed</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>360p</td>
+
+<td>30</td>
+
+<td>800–1,200 Kbps</td>
+
+<td>2 Mbps</td>
+
+</tr>
+
+<tr>
+
+<td>480p</td>
+
+<td>30</td>
+
+<td>1,200–2,500 Kbps</td>
+
+<td>4 Mbps</td>
+
+</tr>
+
+<tr>
+
+<td>720p</td>
+
+<td>30</td>
+
+<td>2,500–5,000 Kbps</td>
+
+<td>7 Mbps</td>
+
+</tr>
+
+<tr>
+
+<td>720p</td>
+
+<td>60</td>
+
+<td>3,500–6,500 Kbps</td>
+
+<td>9 Mbps</td>
+
+</tr>
+
+<tr>
+
+<td>1080p</td>
+
+<td>30</td>
+
+<td>4,500–8,000 Kbps</td>
+
+<td>10 Mbps</td>
+
+</tr>
+
+<tr>
+
+<td>1080p</td>
+
+<td>60</td>
+
+<td>6,000–10,000 Kbps</td>
+
+<td>15 Mbps</td>
+
+</tr>
+
+<tr>
+
+<td>1440p</td>
+
+<td>60</td>
+
+<td>12,000–24,000 Kbps</td>
+
+<td>30 Mbps</td>
+
+</tr>
+
+<tr>
+
+<td>2160p (4K)</td>
+
+<td>60</td>
+
+<td>20,000–51,000 Kbps</td>
+
+<td>60 Mbps</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Recommended Internet Speed
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>10 Mbps Upload</h3>
+
+<p>
+
+Best for 720p60 streaming.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>15 Mbps Upload</h3>
+
+<p>
+
+Ideal for 1080p60 streaming.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>30 Mbps Upload</h3>
+
+<p>
+
+Perfect for 1440p60 streaming.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>60+ Mbps Upload</h3>
+
+<p>
+
+Recommended for 4K60 live streaming.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Best Encoder Recommendations
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>RTX 50 Series</h3>
+
+<p>
+
+✅ NVENC AV1
+
+</p>
+
+<ul>
+
+<li>Best image quality</li>
+
+<li>Lowest bitrate loss</li>
+
+<li>Excellent efficiency</li>
+
+<li>Perfect for 1440p & 4K</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>RTX 40 Series</h3>
+
+<p>
+
+✅ NVENC AV1
+
+</p>
+
+<ul>
+
+<li>Excellent quality</li>
+
+<li>Low GPU usage</li>
+
+<li>Perfect for YouTube Live</li>
+
+<li>Recommended choice</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>RTX 20 / 30 Series</h3>
+
+<p>
+
+✅ NVENC H.264
+
+</p>
+
+<ul>
+
+<li>Very stable</li>
+
+<li>Excellent compatibility</li>
+
+<li>Great quality</li>
+
+<li>Low performance impact</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>AMD RX 7000+</h3>
+
+<p>
+
+✅ AV1 Encoder
+
+</p>
+
+<ul>
+
+<li>Excellent quality</li>
+
+<li>Modern codec</li>
+
+<li>Low latency</li>
+
+<li>Great alternative</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Intel Arc</h3>
+
+<p>
+
+✅ AV1 Encoder
+
+</p>
+
+<ul>
+
+<li>Very efficient</li>
+
+<li>High quality</li>
+
+<li>Modern hardware encoder</li>
+
+<li>Great for creators</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>No Dedicated GPU</h3>
+
+<p>
+
+✅ x264 (Very Fast)
+
+</p>
+
+<ul>
+
+<li>CPU encoding</li>
+
+<li>Needs powerful processor</li>
+
+<li>Higher CPU usage</li>
+
+<li>Use only if necessary</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Recommended Hardware
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>CPU</h3>
+
+<p>
+
+Ryzen 7 / Ryzen 9
+
+Intel Core i7 / i9 (12th Gen or newer)
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>GPU</h3>
+
+<p>
+
+RTX 4060 or better
+
+RTX 5070 / RTX 5080 recommended for AV1.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Memory</h3>
+
+<p>
+
+Minimum 16GB
+
+Recommended 32GB DDR5
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Storage</h3>
+
+<p>
+
+NVMe SSD
+
+Recommended Samsung 990 Pro or equivalent.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Streaming Checklist
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+🌐 Internet
+
+</h3>
+
+<p>
+
+Use wired Ethernet.
+
+Avoid Wi-Fi whenever possible.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🎥 Video
+
+</h3>
+
+<p>
+
+1080p60
+
+Lanczos
+
+Rec.709
+
+Limited Range
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+⚙ Encoder
+
+</h3>
+
+<p>
+
+CBR
+
+2 Second Keyframe
+
+P6 Quality
+
+Psycho Visual Tuning ON
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🎤 Audio
+
+</h3>
+
+<p>
+
+48 kHz
+
+AAC
+
+192 Kbps
+
+Noise Suppression Enabled
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Professional Streaming Tips
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+🔥 Stream Stability
+
+</h3>
+
+<p>
+
+Keep your bitrate stable instead of constantly increasing it.
+
+A stable stream provides a better viewer experience.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🎮 GPU Usage
+
+</h3>
+
+<p>
+
+Keep GPU usage below 95% while gaming.
+
+Leave some headroom for OBS encoding.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+📡 Internet
+
+</h3>
+
+<p>
+
+Use at least twice your streaming bitrate as available upload speed.
+
+Example:
+
+8000 Kbps stream → 16 Mbps upload.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+💻 Background Apps
+
+</h3>
+
+<p>
+
+Close unnecessary applications before going live.
+
+This improves both FPS and stream stability.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Common Streaming Mistakes
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+❌ Too High Bitrate
+
+</h3>
+
+<p>
+
+Higher bitrate isn't always better.
+
+Use values recommended for your resolution.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+❌ Wi-Fi Streaming
+
+</h3>
+
+<p>
+
+Wireless connections can introduce packet loss and instability.
+
+Ethernet is strongly recommended.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+❌ 100% GPU Usage
+
+</h3>
+
+<p>
+
+OBS needs GPU resources.
+
+Maxing out your GPU can cause encoder overload.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+❌ Ignoring Audio
+
+</h3>
+
+<p>
+
+Poor microphone quality drives viewers away faster than average video quality.
+
+Invest in clean audio.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+YouTube Monetization
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>💰 Ad Revenue</h3>
+
+<p>
+
+Earn from advertisements shown before, during and after your live streams once you qualify for YouTube monetization.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>❤️ Super Chats & Super Stickers</h3>
+
+<p>
+
+Viewers can financially support your live streams by purchasing Super Chats and Super Stickers.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>⭐ Channel Memberships</h3>
+
+<p>
+
+Offer exclusive badges, emojis and member-only perks for recurring monthly income.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🛍 Shopping & Sponsorships</h3>
+
+<p>
+
+As your audience grows, sponsorships, affiliate links and product promotions can become significant income sources.
+
+</p>
+
+</div>
+
+</div>
+
+<p style="margin-top:30px;">
+
+Want to estimate your income? Visit the
+<a href="../earnings/youtube.html" style="color: #00a2ff;">YouTube Earnings Calculator</a>
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Recommended Downloads
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>🎥 OBS Studio</h3>
+
+<p>
+
+The official streaming software for creators.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🔌 OBS Plugins</h3>
+
+<p>
+
+Improve your stream with additional tools and integrations.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🎙 Audio Plugins</h3>
+
+<p>
+
+Noise suppression, equalizers and microphone enhancement tools.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📊 Stream Overlays</h3>
+
+<p>
+
+Alerts, widgets and professional stream layouts.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Frequently Asked Questions
+
+</h2>
+
+<div class="card">
+
+<h3>
+
+Should I stream at 1080p60?
+
+</h3>
+
+<p>
+
+Yes, if your hardware and internet connection can maintain a stable bitrate. Otherwise, 720p60 often provides a smoother viewing experience.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Is AV1 better than H.264?
+
+</h3>
+
+<p>
+
+Yes. AV1 generally delivers better image quality at the same bitrate, but it requires compatible hardware and software support.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+What is the best bitrate for YouTube?
+
+</h3>
+
+<p>
+
+For most creators streaming at 1080p60, 6000–9000 Kbps is a solid starting point. Higher resolutions require higher bitrates.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Should I use CBR?
+
+</h3>
+
+<p>
+
+Yes. Constant Bitrate (CBR) is the recommended rate control mode for live streaming on YouTube.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Can I stream over Wi-Fi?
+
+</h3>
+
+<p>
+
+You can, but a wired Ethernet connection is strongly recommended for lower latency and fewer dropped frames.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>
+
+Related Guides
+
+</h2>
+
+<div class="grid">
+
+<a href="twitch.html" class="card">
+
+<h3>
+
+🎮 Twitch OBS Settings
+
+</h3>
+
+<p>
+
+Recommended settings for Twitch live streaming.
+
+</p>
+
+</a>
+
+<a href="kick.html" class="card">
+
+<h3>
+
+🟢 Kick OBS Settings
+
+</h3>
+
+<p>
+
+Optimize OBS Studio for Kick streaming.
+
+</p>
+
+</a>
+
+<a href="loco.html" class="card">
+
+<h3>
+
+📱 Loco OBS Settings
+
+</h3>
+
+<p>
+
+Streaming recommendations for Loco.
+
+</p>
+
+</a>
+
+<a href="obs.html" class="card">
+
+<h3>
+
+⚙ Complete OBS Guide
+
+</h3>
+
+<p>
+
+Learn every important OBS setting from beginner to advanced.
+
+</p>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>🎮 Stream Guides</h3>
+
+<p>
+Streaming, gaming settings and creator tools.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Platforms</h3>
+
+<a href="../platforms/obs.html">OBS</a>
+
+<a href="../platforms/youtube.html">YouTube</a>
+
+<a href="../platforms/twitch.html">Twitch</a>
+
+<a href="../platforms/kick.html">Kick</a>
+
+<a href="../platforms/loco.html">Loco</a>
+
+</div>
+
+
+<div>
+
+<h3>Earning</h3>
+
+<a href="../earnings/index.html">
+Earnings Calculator
+</a>
+
+<a href="../earnings/youtube.html">
+YouTube Earning
+</a>
+
+<a href="../earnings/twitch.html">
+Twitch Earning
+</a>
+
+<a href="../earnings/kick.html">
+Kick Earning
+</a>
+
+<a href="../earnings/loco.html">
+Loco Earning
+</a>
+
+</div>
+
+
+<div>
+
+<h3>Tools</h3>
+
+<a href="../tools/bitrate-calculator.html">
+Bitrate Calculator
+</a>
+
+<a href="../tools/internet-speed.html">
+Internet Speed
+</a>
+
+<a href="../tools/currency-converter.html">
+Currency Converter
+</a>
+
+</div>
+
+
+<div>
+
+<h3>Games</h3>
+
+<a href="../games/valorant.html">
+Valorant
+</a>
+
+</div>
+
+
+<div>
+
+<h3>Support</h3>
+
+<a href="../about.html">About</a>
+
+<a href="../contact.html">Contact</a>
+
+<a href="../faq.html">FAQ</a>
+
+<a href="../downloads.html">Downloads</a>
+
+</div>
+
+
+<div>
+
+<h3>Legal</h3>
+
+<a href="../legal/privacy-policy.html">
+Privacy Policy
+</a>
+
+<a href="../legal/terms.html">
+Terms of Service
+</a>
+
+<a href="../legal/cookie-policy.html">
+Cookie Policy
+</a>
+
+<a href="../legal/disclaimer.html">
+Disclaimer
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<p>
+© 2026 Stream Guides. All Rights Reserved.
+</p>
+
+<p>
+Built for Streamers 🎮
+</p>
+
+</div>
+
+</footer>
+
+<script src="../js/theme.js"></script>
+<script src="../js/navigation.js"></script>
+
+</body>
+
+</html>
