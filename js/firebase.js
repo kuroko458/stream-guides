@@ -1,13 +1,35 @@
+/* =========================================
+   Stream Guides
+   Firebase Configuration
+========================================= */
+
+"use strict";
+
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT.appspot.com",
-    messagingSenderId: "XXXX",
-    appId: "XXXX"
+    apiKey: "AIzaSyC7N50jluVxl38aHnVhPDGsH1o2V7KlGzk",
+    authDomain: "stream-guides.firebaseapp.com",
+    projectId: "stream-guides",
+    storageBucket: "stream-guides.firebasestorage.app",
+    messagingSenderId: "88865512366",
+    appId: "1:88865512366:web:95af39a01c4befb440c63f"
 };
 
-firebase.initializeApp(firebaseConfig);
+
+/* =========================================
+   Initialize Firebase
+========================================= */
+
+if (!firebase.apps.length) {
+
+    firebase.initializeApp(firebaseConfig);
+
+}
+
+
+/* =========================================
+   Firebase Services
+========================================= */
 
 const auth = firebase.auth();
+
 const db = firebase.firestore();

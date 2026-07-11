@@ -2,30 +2,81 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Admin Panel | Stream Guides</title>
 
-<link rel="icon" href="../favicon.ico">
-<link rel="manifest" href="../manifest.json">
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/responsive.css">
-<link rel="stylesheet" href="../css/animations.css">
-<link rel="stylesheet" href="../css/dark.css">
-<link rel="stylesheet" href="../css/admin.css">
-<script defer src="../js/main.js"></script>
-<script defer src="../js/admin.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<meta name="description"
+content="Stream Guides administration panel.">
+
+<meta name="robots"
+content="noindex, nofollow, noarchive">
+
+<link rel="icon"
+href="../favicon.ico">
+
+<link rel="manifest"
+href="../manifest.json">
+
+<link rel="stylesheet"
+href="../css/style.css">
+
+<link rel="stylesheet"
+href="../css/responsive.css">
+
+<link rel="stylesheet"
+href="../css/animations.css">
+
+<link rel="stylesheet"
+href="../css/dark.css">
+
+<link rel="stylesheet"
+href="../css/admin.css">
+
+
+<!-- Firebase -->
+
+<script
+src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js">
+</script>
+
+<script
+src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js">
+</script>
+
+<script
+src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js">
+</script>
+
+
+<!-- Stream Guides JavaScript -->
+
+<script defer
+src="../js/firebase.js">
+</script>
+
+<script defer
+src="../js/main.js">
+</script>
+
+<script defer
+src="../js/admin.js">
+</script>
+
 </head>
 
+
 <body>
+
 
 <header>
 
 <div class="container">
+
 
 <div class="logo">
 
@@ -33,107 +84,596 @@
 
 </div>
 
+
 <nav id="nav">
 
-<a href="../index.html">Home</a>
-<a href="../platforms/obs.html">OBS</a>
-<a href="../platforms/youtube.html">YouTube</a>
-<a href="../platforms/twitch.html">Twitch</a>
-<a href="../platforms/kick.html">Kick</a>
-<a href="../platforms/loco.html">Loco</a>
-<a href="../tools/bitrate-calculator.html">Calculator</a>
-<a href="../earnings/index.html">Earnings</a>
-<a href="../faq.html">FAQ</a>
-<a href="admin.html" class="active">Admin</a>
+<a href="../index.html">
+Home
+</a>
+
+<a href="../platforms/obs.html">
+OBS
+</a>
+
+<a href="../platforms/youtube.html">
+YouTube
+</a>
+
+<a href="../platforms/twitch.html">
+Twitch
+</a>
+
+<a href="../platforms/kick.html">
+Kick
+</a>
+
+<a href="../platforms/loco.html">
+Loco
+</a>
+
+<a href="../tools/bitrate-calculator.html">
+Calculator
+</a>
+
+<a href="../earnings/index.html">
+Earnings
+</a>
+
+<a href="../games/index.html">
+Games
+</a>
+
+<a href="../faq.html">
+FAQ
+</a>
 
 </nav>
 
+
 <div class="actions">
 
-<button id="themeBtn">
+<button
+id="themeBtn"
+type="button"
+aria-label="Toggle theme">
+
 🌙
+
 </button>
 
-<button id="menuBtn">
+
+<button
+id="menuBtn"
+type="button"
+aria-label="Open navigation menu">
+
 ☰
+
 </button>
 
 </div>
+
 
 </div>
 
 </header>
 
+
+
+<main>
+
+
 <section class="hero">
 
 <div class="container">
 
-<h1>Admin Panel</h1>
+<h1>
 
-<p>Manage website content (stored locally in your browser)</p>
+Admin Panel
 
-</div>
+</h1>
 
-</section>
 
-<section>
+<p>
 
-<div class="container">
+Manage Stream Guides website content.
 
-<h2>Login</h2>
-
-<div class="card">
-
-<label>Password</label>
-<input type="password" id="adminPass" placeholder="Enter admin password">
-
-<button onclick="loginAdmin()" class="btn">Login</button>
-
-<p id="loginStatus"></p>
-
-</div>
+</p>
 
 </div>
 
 </section>
 
-<section id="dashboard" style="display:none;">
+
+
+<section id="loginSection">
 
 <div class="container">
 
-<h2>Dashboard</h2>
+<h2>
+
+Admin Login
+
+</h2>
+
+
+<div class="card admin-login-card">
+
+
+<form id="adminLoginForm">
+
+<label for="adminEmail">
+
+Email
+
+</label>
+
+
+<input
+type="email"
+id="adminEmail"
+name="adminEmail"
+placeholder="Enter admin email"
+autocomplete="username"
+required>
+
+
+<label for="adminPass">
+
+Password
+
+</label>
+
+
+<input
+type="password"
+id="adminPass"
+name="adminPass"
+placeholder="Enter admin password"
+autocomplete="current-password"
+required>
+
+
+<button
+type="submit"
+class="btn"
+id="loginBtn">
+
+Login
+
+</button>
+
+
+<p
+id="loginStatus"
+role="status"
+aria-live="polite">
+</p>
+
+
+</form>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section
+id="dashboard"
+style="display:none;">
+
+<div class="container">
+
+
+<div class="admin-dashboard-header">
+
+<div>
+
+<h2>
+
+Dashboard
+
+</h2>
+
+
+<p>
+
+Manage Stream Guides website data.
+
+</p>
+
+</div>
+
+
+<button
+type="button"
+class="btn btn-outline"
+id="logoutBtn">
+
+Logout
+
+</button>
+
+</div>
+
+
 
 <div class="grid">
 
-<div class="card">
-<h3>OBS Settings</h3>
-<p>Edit streaming guides</p>
-<button class="btn" onclick="openEditor('obs')">Edit</button>
-</div>
 
 <div class="card">
-<h3>Earnings</h3>
-<p>Edit RPM values</p>
-<button class="btn" onclick="openEditor('earnings')">Edit</button>
+
+<h3>
+
+🎥 OBS Settings
+
+</h3>
+
+
+<p>
+
+Manage OBS streaming guide data.
+
+</p>
+
+
+<button
+type="button"
+class="btn"
+data-editor="obs">
+
+Edit OBS
+
+</button>
+
 </div>
 
-<div class="card">
-<h3>Bitrates</h3>
-<p>Edit bitrate tables</p>
-<button class="btn" onclick="openEditor('bitrates')">Edit</button>
-</div>
+
 
 <div class="card">
-<h3>Export Data</h3>
-<p>Download JSON backup</p>
-<button class="btn" onclick="exportData()">Export</button>
+
+<h3>
+
+💰 Earnings
+
+</h3>
+
+
+<p>
+
+Manage platform earning information.
+
+</p>
+
+
+<button
+type="button"
+class="btn"
+data-editor="earnings">
+
+Edit Earnings
+
+</button>
+
 </div>
+
+
+
+<div class="card">
+
+<h3>
+
+📡 Bitrates
+
+</h3>
+
+
+<p>
+
+Manage streaming bitrate information.
+
+</p>
+
+
+<button
+type="button"
+class="btn"
+data-editor="bitrates">
+
+Edit Bitrates
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+🎯 Valorant Players
+
+</h3>
+
+
+<p>
+
+Manage Valorant player sensitivity data.
+
+</p>
+
+
+<button
+type="button"
+class="btn"
+data-editor="players">
+
+Edit Players
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+🎯 Crosshairs
+
+</h3>
+
+
+<p>
+
+Manage Valorant crosshair data.
+
+</p>
+
+
+<button
+type="button"
+class="btn"
+data-editor="crosshairs">
+
+Edit Crosshairs
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+🖱 Gaming Gear
+
+</h3>
+
+
+<p>
+
+Manage gaming gear information.
+
+</p>
+
+
+<button
+type="button"
+class="btn"
+data-editor="gear">
+
+Edit Gear
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+🖥 Graphics
+
+</h3>
+
+
+<p>
+
+Manage graphics settings data.
+
+</p>
+
+
+<button
+type="button"
+class="btn"
+data-editor="graphics">
+
+Edit Graphics
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+🎧 Audio
+
+</h3>
+
+
+<p>
+
+Manage game audio settings.
+
+</p>
+
+
+<button
+type="button"
+class="btn"
+data-editor="audio">
+
+Edit Audio
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+⬇ Export Data
+
+</h3>
+
+
+<p>
+
+Download a JSON backup of admin data.
+
+</p>
+
+
+<button
+type="button"
+class="btn"
+id="exportBtn">
+
+Export Data
+
+</button>
+
+</div>
+
 
 </div>
 
 </div>
 
 </section>
+
+
+
+<section
+id="editorSection"
+style="display:none;">
+
+<div class="container">
+
+
+<div class="admin-editor-header">
+
+<div>
+
+<h2 id="editorTitle">
+
+Data Editor
+
+</h2>
+
+
+<p id="editorDescription">
+
+Edit website data.
+
+</p>
+
+</div>
+
+
+<button
+type="button"
+class="btn btn-outline"
+id="closeEditorBtn">
+
+Close Editor
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+
+<label for="dataEditor">
+
+JSON Data
+
+</label>
+
+
+<textarea
+id="dataEditor"
+rows="22"
+spellcheck="false"
+placeholder="JSON data will appear here...">
+</textarea>
+
+
+<p
+id="editorStatus"
+role="status"
+aria-live="polite">
+</p>
+
+
+<div class="hero-buttons">
+
+
+<button
+type="button"
+class="btn"
+id="saveDataBtn">
+
+Save Data
+
+</button>
+
+
+<button
+type="button"
+class="btn btn-outline"
+id="formatJsonBtn">
+
+Format JSON
+
+</button>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
 
 <footer>
 
@@ -141,78 +681,151 @@
 
 <div class="footer-grid">
 
+
 <div>
 
-<h3>🎮 Stream Guides</h3>
+<h3>
+
+🎮 Stream Guides
+
+</h3>
+
 
 <p>
+
 Streaming, gaming settings and creator tools.
+
 </p>
 
 </div>
 
 
+
 <div>
 
-<h3>Platforms</h3>
+<h3>
 
-<a href="../platforms/obs.html">OBS</a>
+Platforms
 
-<a href="../platforms/youtube.html">YouTube</a>
+</h3>
 
-<a href="../platforms/twitch.html">Twitch</a>
 
-<a href="../platforms/kick.html">Kick</a>
+<a href="../platforms/obs.html">
 
-<a href="../platforms/loco.html">Loco</a>
+OBS
+
+</a>
+
+
+<a href="../platforms/youtube.html">
+
+YouTube
+
+</a>
+
+
+<a href="../platforms/twitch.html">
+
+Twitch
+
+</a>
+
+
+<a href="../platforms/kick.html">
+
+Kick
+
+</a>
+
+
+<a href="../platforms/loco.html">
+
+Loco
+
+</a>
 
 </div>
 
 
+
 <div>
 
-<h3>Earning</h3>
+<h3>
+
+Earnings
+
+</h3>
+
 
 <a href="../earnings/index.html">
+
 Earnings Calculator
+
 </a>
+
 
 <a href="../earnings/youtube.html">
-YouTube Earning
+
+YouTube Earnings
+
 </a>
+
 
 <a href="../earnings/twitch.html">
-Twitch Earning
+
+Twitch Earnings
+
 </a>
+
 
 <a href="../earnings/kick.html">
-Kick Earning
+
+Kick Earnings
+
 </a>
 
+
 <a href="../earnings/loco.html">
-Loco Earning
+
+Loco Earnings
+
 </a>
 
 </div>
+
 
 
 <div>
 
-<h3>Tools</h3>
+<h3>
+
+Tools
+
+</h3>
+
 
 <a href="../tools/bitrate-calculator.html">
+
 Bitrate Calculator
+
 </a>
+
 
 <a href="../tools/internet-speed.html">
+
 Internet Speed
+
 </a>
 
+
 <a href="../tools/currency-converter.html">
+
 Currency Converter
+
 </a>
 
 </div>
+
 
 
 <div>
@@ -224,76 +837,134 @@ Games
 </h3>
 
 
-<a href="index.html">
+<a href="../games/index.html">
+
 All Games
+
 </a>
 
 
-<a href="valorant.html">
+<a href="../games/valorant.html">
+
 Valorant
+
 </a>
 
 </div>
 
 
+
 <div>
 
-<h3>Support</h3>
+<h3>
 
-<a href="../about.html">About</a>
+Support
 
-<a href="../contact.html">Contact</a>
+</h3>
 
-<a href="../faq.html">FAQ</a>
 
-<a href="../downloads.html">Downloads</a>
+<a href="../about.html">
+
+About
+
+</a>
+
+
+<a href="../contact.html">
+
+Contact
+
+</a>
+
+
+<a href="../faq.html">
+
+FAQ
+
+</a>
+
+
+<a href="../downloads.html">
+
+Downloads
+
+</a>
 
 </div>
 
 
+
 <div>
 
-<h3>Legal</h3>
+<h3>
+
+Legal
+
+</h3>
+
 
 <a href="../legal/privacy-policy.html">
+
 Privacy Policy
+
 </a>
+
 
 <a href="../legal/terms.html">
+
 Terms of Service
+
 </a>
+
 
 <a href="../legal/cookie-policy.html">
+
 Cookie Policy
+
 </a>
+
 
 <a href="../legal/disclaimer.html">
+
 Disclaimer
+
 </a>
 
 </div>
 
+
 </div>
 
 </div>
+
 
 
 <div class="footer-bottom">
 
 <p>
+
 © 2026 Stream Guides. All Rights Reserved.
+
 </p>
 
+
 <p>
+
 Built for Streamers 🎮
+
 </p>
 
 </div>
 
 </footer>
 
+
+
 <script src="../js/theme.js"></script>
+
 <script src="../js/navigation.js"></script>
 
+
 </body>
+
 </html>
